@@ -21,17 +21,22 @@ var max_health: int = 10
 var base_melee_damage: int = 3
 var turn_counter: int = 0
 var damage_type: String = ""
+var effects: Effect
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
 
 func attack():
-	emit_signal("deal_damage", base_melee_damage)
+	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
+	effects.effect_applied()
+	emit_signal("deal_damage", damage)
 	
-	
-func take_damage(damage: int, damage_type:int = 0):
+func take_damage(damage: int, effect :String = ""):
 	print(damage)
-	health -= damage
+	if (effect != ""):
+		print(effect)
+		effects.add_effect(effect)
+	health -= damage + effects.get_burn_mod()
 	print("Enemy takes damage ", damage)
 	health_label.text = "%d / %d" % [health, max_health]
 	damage_number_animation.play("moving_number")
