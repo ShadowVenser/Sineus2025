@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://uo8ncoq0ju5w"]
+
+[ext_resource type="Script" uid="uid://c7d5sws0lnfpo" path="res://level/level.gd" id="1_7lnir"]
+[ext_resource type="PackedScene" uid="uid://dta07x6ir0ctl" path="res://character_creator/character_creator.tscn" id="2_5gx2l"]
+[ext_resource type="Texture2D" uid="uid://dr7bxtxh0km8o" path="res://backgrounds/back2.jpg" id="2_44x8d"]
+[ext_resource type="PackedScene" uid="uid://cy774ol4fe3dr" path="res://loot_offer/canvas_layer.tscn" id="2_ktfr2"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="3_ivpvi"]
+[ext_resource type="PackedScene" uid="uid://chyst0w660inr" path="res://player/player.tscn" id="3_vkbyq"]
+[ext_resource type="PackedScene" uid="uid://b7v7yr1dj4ag" path="res://enemy/enemy.tscn" id="4_ktfr2"]
+[ext_resource type="PackedScene" uid="uid://djek4mwy0rp0n" path="res://victory_screen/victory_screen.tscn" id="6_0v1st"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_7lnir")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_44x8d")
+
+[node name="battle_begins" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -122.0
+offset_right = 122.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_ivpvi")
+theme_override_font_sizes/font_size = 40
+text = "ПЕРВЫЙ БОЙ!"
+horizontal_alignment = 1
+
+[node name="death_panel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -122.0
+offset_right = 122.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_ivpvi")
+theme_override_font_sizes/font_size = 40
+text = "герой был сражен...
+Однако на его место придет новый..."
+horizontal_alignment = 1
+
+[node name="victory_panel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -122.0
+offset_right = 122.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_ivpvi")
+theme_override_font_sizes/font_size = 40
+text = "последний противник повережен!
+Теперь вы легенда!"
+horizontal_alignment = 1
+
+[node name="loot_offer" parent="." instance=ExtResource("2_ktfr2")]
+visible = false
+
+[node name="character_creator" parent="." instance=ExtResource("2_5gx2l")]
+visible = false
+
+[node name="victory_screen" parent="." instance=ExtResource("6_0v1st")]
+visible = false
+
+[node name="player" parent="." instance=ExtResource("3_vkbyq")]
+position = Vector2(249, 323)
+
+[node name="enemy" parent="." instance=ExtResource("4_ktfr2")]
+position = Vector2(832, 327)
+
+[editable path="enemy"]

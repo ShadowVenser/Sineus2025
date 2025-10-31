@@ -1,0 +1,215 @@
+[gd_scene load_steps=3 format=3 uid="uid://dta07x6ir0ctl"]
+
+[ext_resource type="Script" uid="uid://cxqrv01n0xfpj" path="res://character_creator/rogue_button.gd" id="2_4m1i6"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="3_u7m18"]
+
+[node name="character_creator" type="CanvasLayer"]
+
+[node name="Control" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="rogue" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.7
+anchor_right = 0.2
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_4m1i6")
+
+[node name="class" type="Label" parent="Control/rogue"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+text = "Разбойник"
+horizontal_alignment = 1
+
+[node name="ability" type="Label" parent="Control/rogue"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 20
+text = "Скрытая атака:
++1 к урону если
+ловкость выше
+вражеской"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="warrior" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.7
+anchor_right = 0.5
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_4m1i6")
+
+[node name="class" type="Label" parent="Control/warrior"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+text = "Воин"
+horizontal_alignment = 1
+
+[node name="ability" type="Label" parent="Control/warrior"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 20
+text = "Скрытая атака:
++1 к урону если
+ловкость выше
+вражеской"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="barbarian" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.7
+anchor_right = 0.8
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("2_4m1i6")
+
+[node name="class" type="Label" parent="Control/barbarian"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -81.0
+offset_right = 81.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 30
+text = "Варвар"
+horizontal_alignment = 1
+
+[node name="ability" type="Label" parent="Control/barbarian"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u7m18")
+theme_override_font_sizes/font_size = 20
+text = "Скрытая атака:
++1 к урону если
+ловкость выше
+вражеской"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.2
+anchor_right = 0.5
+anchor_bottom = 0.2
+offset_left = -200.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_constants/paragraph_separation = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("3_u7m18")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "ВЫБЕРИТЕ КЛАСС ПЕРСОНАЖА"
+horizontal_alignment = 1
+
+[node name="stats_and_abilities" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.45
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -150.0
+offset_right = 350.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_constants/paragraph_separation = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("3_u7m18")
+theme_override_font_sizes/normal_font_size = 30
+text = "ХАРАКТЕРИСТИКИ
+СИЛА ЛОВКОСТЬ"
+horizontal_alignment = 1

@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://djek4mwy0rp0n"]
+
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="1_40gsx"]
+[ext_resource type="Script" uid="uid://cxqrv01n0xfpj" path="res://character_creator/rogue_button.gd" id="2_xs15k"]
+
+[node name="victory_screen" type="CanvasLayer"]
+
+[node name="Control" type="Panel" parent="."]
+self_modulate = Color(0.7283124, 0.7283124, 0.7283124, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="yes" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.7
+anchor_right = 0.35
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_40gsx")
+theme_override_font_sizes/font_size = 40
+text = "ДА
+"
+script = ExtResource("2_xs15k")
+
+[node name="no" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65
+anchor_top = 0.7
+anchor_right = 0.65
+anchor_bottom = 0.7
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_40gsx")
+theme_override_font_sizes/font_size = 40
+text = "НЕТ
+"
+script = ExtResource("2_xs15k")
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.45
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -30.5
+offset_right = 400.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 5
+theme_override_constants/paragraph_separation = 5
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("1_40gsx")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "НАЧАТЬ НОВОЕ ПРИКЛЮЧЕНИЕ?"
+horizontal_alignment = 1
