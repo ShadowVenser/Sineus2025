@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-#signal clicked(label: String)
+signal clicked(label: String)
 
 @onready var flow: FlowContainer = $Control/MarginContainer/ScrollContainer/ButtonsFlow
 
@@ -13,10 +13,12 @@ func _ready() -> void:
 	$Control/spell3.connect("clicked", spell_clicked)
 	$Control/spell4.connect("clicked", spell_clicked)
 	$Control/spell5.connect("clicked", spell_clicked)
+	$Control/exit.connect("clicked", spell_clicked)
 	pass
 		
 func spell_clicked(spell_name: String):
-	pass
+	#print(spell_name," clicked")
+	emit_signal("clicked", spell_name)
 	
 func change_size(plus: int = 1):
 	size += plus
