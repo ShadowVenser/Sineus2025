@@ -66,6 +66,8 @@ func player_death():
 	pass
 	
 func enemy_defeated():
+	player_turn = true
+	$choose_action/SpellBook.change_size()
 	call_deferred("set_wait_time", 2.0)
 	defeated_enemy_flag = true
 	

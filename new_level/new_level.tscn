@@ -10,8 +10,13 @@ script = ExtResource("1_cr4ar")
 
 [node name="choose_action" parent="." instance=ExtResource("1_yg5ou")]
 
+[node name="SpellBook" parent="choose_action" index="1"]
+visible = false
+
 [node name="mage" parent="." instance=ExtResource("2_4gmwc")]
 position = Vector2(184, 307)
 
 [node name="new_enemy" parent="." instance=ExtResource("4_xebsd")]
 position = Vector2(901, 311)
+
+[editable path="choose_action"]
