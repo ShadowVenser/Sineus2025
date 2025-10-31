@@ -21,7 +21,7 @@ var max_health: int = 10
 var base_melee_damage: int = 3
 var turn_counter: int = 0
 var damage_type: String = ""
-var effects: Effect
+var effects: Effect = Effect.new()
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
