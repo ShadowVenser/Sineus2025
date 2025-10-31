@@ -4,6 +4,7 @@ extends Node2D
 @onready var player = $mage
 @onready var enemy = $new_enemy
 	
+var rythm = WorldRythm.new()
 var turn_number: int = 0
 var defeated_enemies: int = 0
 var wait_time: float = 0
@@ -45,6 +46,7 @@ func _process(delta: float) -> void:
 			new_cycle()
 			return
 		turn_number += 1
+		rythm.next_tick()
 		print("Turn ", turn_number)
 		if player_turn:
 			choosing_action = true
