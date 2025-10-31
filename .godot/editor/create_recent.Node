@@ -1,14 +1,14 @@
+Control
+CanvasLayer
+TextureRect
 Label
 TextureButton
 Button
 Sprite2D
-Control
-CanvasLayer
 FlowContainer
 ScrollContainer
 MarginContainer
 RichTextLabel
 AnimatedSprite2D
-TextureRect
 AnimationPlayer
 AudioStreamPlayer2D      - Matches the "sound" keyword.

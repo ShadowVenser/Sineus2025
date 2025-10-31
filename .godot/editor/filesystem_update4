@@ -1,3 +1,2 @@
-res://main_menu/main_menu.tscn
-res://main_menu/main_menu.gd
-res://spell_book/spell_book.tscn
+res://new_level/new_level.tscn
+res://new_level/new_level.gd

@@ -1,10 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761950062
+::res://::1761953754
 export_presets.cfg::TextFile::-1::1761903611::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::5824853287545027535::1761903611::1761945783::1::::<><><>0<>0<>77d3c1b90b81b712451462223187ad4e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 spell.gd::GDScript::5333258271003063219::1761939359::0::1::::Spell<>Node<><>0<>0<><>::
-::res://backgrounds/::1761951931
+::res://backgrounds/::1761952606
 back2.jpg::CompressedTexture2D::8418635305134364320::1761903611::1761945783::1::::<><><>0<>0<>ad0dd4d37acdf98be80aff7b7960343d<>res://.godot/imported/back2.jpg-ba8ecb27b7af98a9b61d6bb07bb33a63.ctex::
+preview.png::CompressedTexture2D::5703042638172567421::1761952605::1761952606::1::::<><><>0<>0<>4a23eb28783ce23103ab244462bc99f8<>res://.godot/imported/preview.png-f62975266aab4ade783662bada1bce31.ctex::
 UI_TravelBook_BookCover01a.png::CompressedTexture2D::8273960812287626504::1761951865::1761951866::1::::<><><>0<>0<>4d7024c7f44b4c2cd89f4c4bda2cb8a6<>res://.godot/imported/UI_TravelBook_BookCover01a.png-88e803d477f4b9cc4d68be3ee045c231.ctex::
 UI_TravelBook_BookPageLeft01a.png::CompressedTexture2D::337806476454517311::1761951931::1761951931::1::::<><><>0<>0<>996215dcc88edc62d8439ae307cd50fc<>res://.godot/imported/UI_TravelBook_BookPageLeft01a.png-b0ad189fdeffbc11070bd1e632541c97.ctex::
 Vamp Castle BG.png::CompressedTexture2D::3906639688440418903::1761947470::1761949157::1::::<><><>0<>0<>4959c62fc06b413b61632d15bee58649<>res://.godot/imported/Vamp Castle BG.png-b0b8280b689e286ba882db4cd2a66485.ctex::
@@ -25,22 +26,22 @@ level.gd::GDScript::7026932335609984984::1761903611::0::1::::<>Node2D<><>0<>0<><
 level.tscn::PackedScene::1434705164834256698::1761921056::0::1::::<><><>0<>0<><>::uid://c7d5sws0lnfpo::::res://level/level.gd<>uid://dta07x6ir0ctl::::res://character_creator/character_creator.tscn<>uid://dr7bxtxh0km8o::::res://backgrounds/back2.jpg<>uid://cy774ol4fe3dr::::res://loot_offer/canvas_layer.tscn<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://chyst0w660inr::::res://player/player.tscn<>uid://b7v7yr1dj4ag::::res://enemy/enemy.tscn<>uid://djek4mwy0rp0n::::res://victory_screen/victory_screen.tscn
 ::res://loot_offer/::1761903611
 canvas_layer.tscn::PackedScene::6525429188264910263::1761903611::0::1::::<><><>0<>0<><>::uid://cxqrv01n0xfpj::::res://character_creator/rogue_button.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
-::res://main_menu/::1761951662
+::res://main_menu/::1761952828
 main_menu.gd::GDScript::4667270778169416660::1761950808::0::1::::<>Control<><>0<>0<><>::
-main_menu.tscn::PackedScene::3262469969876162718::1761951662::0::1::::<><><>0<>0<><>::uid://b7q4jdunbu0xs::::res://main_menu/main_menu.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://bvwn1xl1apqmh::::res://backgrounds/Vamp Castle BG.png<>uid://cqloemlw0kdxv::::res://ui/UI_TravelBook_FrameSelect01a.png<>uid://bxbs7nf707qcn::::res://ui/UI_TravelBook_FrameSelect01b.png<>uid://c16216g4fqcy8::::res://fonts/Lover-unity.otf
+main_menu.tscn::PackedScene::3262469969876162718::1761952828::0::1::::<><><>0<>0<><>::uid://b7q4jdunbu0xs::::res://main_menu/main_menu.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://bvwn1xl1apqmh::::res://backgrounds/Vamp Castle BG.png<>uid://cqloemlw0kdxv::::res://ui/UI_TravelBook_FrameSelect01a.png<>uid://bxbs7nf707qcn::::res://ui/UI_TravelBook_FrameSelect01b.png<>uid://c16216g4fqcy8::::res://fonts/Lover-unity.otf
 ::res://new_enemy/::1761939359
 new_enemy.gd::GDScript::7461539651559716250::1761939359::0::1::::Enemy<>Node2D<><>0<>0<><>::
 new_enemy.tscn::PackedScene::6607408779457305679::1761939358::0::1::::<><><>0<>0<><>::uid://dekop5582hrgc::::res://new_enemy/new_enemy.gd<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
-::res://new_level/::1761949135
-new_level.gd::GDScript::1876078971004579217::1761949135::0::1::::<>Node2D<><>0<>0<><>::
-new_level.tscn::PackedScene::6115775980009968899::1761945760::0::1::::<><><>0<>0<><>::uid://1y10nas27uvh::::res://new_level/new_level.gd<>uid://8nr30de6hnue::::res://choose_action_screen/choose_action.tscn<>uid://bfg831at0l2vh::::res://player_mage/mage.tscn<>uid://c1exb7f5de312::::res://new_enemy/new_enemy.tscn
+::res://new_level/::1761953661
+new_level.gd::GDScript::1876078971004579217::1761953660::0::1::::<>Node2D<><>0<>0<><>::
+new_level.tscn::PackedScene::6115775980009968899::1761953661::0::1::::<><><>0<>0<><>::uid://1y10nas27uvh::::res://new_level/new_level.gd<>uid://8nr30de6hnue::::res://choose_action_screen/choose_action.tscn<>uid://bfg831at0l2vh::::res://player_mage/mage.tscn<>uid://cniujqs3fa7mv::::res://backgrounds/preview.png<>uid://c1exb7f5de312::::res://new_enemy/new_enemy.tscn
 ::res://player/::1761921056
 entity.gd::GDScript::831736808067531562::1761903611::0::1::::entity<>Node2D<><>0<>0<><>::
 player.gd::GDScript::7868667142127619823::1761921056::0::1::::<>entity<><>0<>0<><>::
 player.tscn::PackedScene::5314836523424220419::1761921056::0::1::::<><><>0<>0<><>::uid://dkdv2eyu8tvk6::::res://player/player.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3
-::res://player_mage/::1761939359
+::res://player_mage/::1761953627
 mage.gd::GDScript::8399148312394943988::1761939359::0::1::::Player<>Node2D<><>0<>0<><>::
-mage.tscn::PackedScene::2751806197902501509::1761939358::0::1::::<><><>0<>0<><>::uid://drwu0l5bw0tc3::::res://player_mage/mage.gd<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
+mage.tscn::PackedScene::2751806197902501509::1761953627::0::1::::<><><>0<>0<><>::uid://drwu0l5bw0tc3::::res://player_mage/mage.gd<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
 ::res://rythm/::1761949135
 rythm.gd::GDScript::4911292893551492493::1761949135::0::1::::WorldRythm<>Node<><>0<>0<><>::
 rythm_tick.gd::GDScript::627023726793235566::1761949135::0::1::::RythmTick<>Node<><>0<>0<><>::
@@ -54,11 +55,11 @@ fFireball.gd::GDScript::8871888953591823641::1761939359::0::1::::FireballSpell<>
 fScorchedEarth.gd::GDScript::6367599933977313764::1761939359::0::1::::ScorchedEarthSpell<>Spell<><>0<>0<><>::
 wFreeze.gd::GDScript::2927993062799517832::1761939359::0::1::::FreezeSpell<>Spell<><>0<>0<><>::
 wHeal.gd::GDScript::6506342288086569201::1761939359::0::1::::HealSpell<>Spell<><>0<>0<><>::
-::res://spell_book/::1761951856
+::res://spell_book/::1761952792
 spell.gd::GDScript::4389466416103444313::1761945584::0::1::::<>Control<><>0<>0<><>::
 spell.tscn::PackedScene::5362587741410803276::1761945760::0::1::::<><><>0<>0<><>::uid://b3sj4umwhqbxx::::res://spell_book/spell.gd<>uid://3gvqgu3sqdo::::res://spell_book/spell_sprite.png<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
 spell_book.gd::GDScript::1533623007501176732::1761929222::0::1::::<>CanvasLayer<><>0<>0<><>::
-spell_book.tscn::PackedScene::8631096784835441248::1761945760::0::1::::<><><>0<>0<><>::uid://v35sugd7ql13::::res://spell_book/spell_book.gd<>uid://cinxbilg3i7j1::::res://spell_book/spell.tscn
+spell_book.tscn::PackedScene::8631096784835441248::1761952792::0::1::::<><><>0<>0<><>::uid://v35sugd7ql13::::res://spell_book/spell_book.gd<>uid://dp476qfgpggvg::::res://backgrounds/UI_TravelBook_BookCover01a.png<>uid://cinxbilg3i7j1::::res://spell_book/spell.tscn<>uid://cniujqs3fa7mv::::res://backgrounds/preview.png<>uid://e2vvgsxxi07l::::res://backgrounds/UI_TravelBook_BookPageLeft01a.png
 spell_sprite.png::CompressedTexture2D::58205231331556100::1761921058::1761945783::1::::<><><>0<>0<>6024c9878e9ed92757e56fd1dc9f60a6<>res://.godot/imported/spell_sprite.png-bcacb39ad06a9c90b64fb902207c83d4.ctex::
 ::res://ui/::1761950390
 UI_TravelBook_FrameSelect01a.png::CompressedTexture2D::5919428850270163215::1761950387::1761950388::1::::<><><>0<>0<>50f9a64a3944c94395723ca9987bffa2<>res://.godot/imported/UI_TravelBook_FrameSelect01a.png-cdf887c7111d8dd7e13608eaebae9f4e.ctex::
