@@ -1,9 +1,3 @@
-res://rythm.gd
-res://rythm_tick.gd
-res://spell.gd
-res://new_level/new_level.gd
-res://new_enemy/new_enemy.tscn
-res://player_mage/mage.gd
-res://new_enemy/new_enemy.gd
-res://spell_book/spell.gd
+res://main_menu/main_menu.tscn
+res://main_menu/main_menu.gd
 res://spell_book/spell_book.tscn
