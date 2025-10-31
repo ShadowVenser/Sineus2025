@@ -1,14 +1,14 @@
+Label
+Button
+Sprite2D
+Control
 CanvasLayer
 FlowContainer
 ScrollContainer
 MarginContainer
-Control
-Label
 RichTextLabel
 AnimatedSprite2D
 TextureRect
 AnimationPlayer
 AudioStreamPlayer2D      - Matches the "sound" keyword.
 Node2D
-Panel
-Button

@@ -1,35 +1,29 @@
 extends CanvasLayer
 
-signal clicked(label: String)
+#signal clicked(label: String)
 
 @onready var flow: FlowContainer = $Control/MarginContainer/ScrollContainer/ButtonsFlow
 
 var items: Array[String] = ["One", "Two", "Exit"]
+var size: int = 2
 
 func _ready() -> void:
-	populate(items)
-
-func populate(labels: Array[String]) -> void:
-	_clear_flow()
-	for i in labels.size():
-		var b := Button.new()
-		b.text = labels[i]
-		b.custom_minimum_size = Vector2(120, 36)
-		b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-		b.pressed.connect(_on_button_pressed.bind(labels[i], i))
-		flow.add_child(b)
-
-func add_button(label: String) -> void:
-	var b := Button.new()
-	b.text = label
-	b.custom_minimum_size = Vector2(120, 36)
-	b.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	b.pressed.connect(_on_button_pressed.bind(label, flow.get_child_count()))
-	flow.add_child(b)
-
-func _clear_flow() -> void:
-	for c in flow.get_children():
-		c.queue_free()
-
-func _on_button_pressed(label: String, idx: int) -> void:
-	emit_signal("clicked", label)
+	$Control/spell1.connect("clicked", spell_clicked)
+	$Control/spell2.connect("clicked", spell_clicked)
+	$Control/spell3.connect("clicked", spell_clicked)
+	$Control/spell4.connect("clicked", spell_clicked)
+	$Control/spell5.connect("clicked", spell_clicked)
+	pass
+		
+func spell_clicked(spell_name: String):
+	pass
+	
+func change_size(plus: int = 1):
+	size += plus
+	if size >= 3:
+		$Control/spell3.show()
+	if size >= 4:
+		$Control/spell4.show()
+	if size >= 5:
+		$Control/spell5.show()
+		

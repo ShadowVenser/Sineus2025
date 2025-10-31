@@ -2,7 +2,7 @@ extends Node2D
 #class_name entity
 
 signal deal_damage(_damage: int)
-signal entity_is_dead(_loot: String)
+signal player_is_dead()
 
 @onready var name_label = $Control/label
 @onready var health_label = $Control/health_label
@@ -25,7 +25,7 @@ var turn_counter: int = 0
 var damage_type: String = ""
 
 func _ready() -> void:
-	pass
+	health_label.text = "%d / %d" % [health, max_health]
 	#damage_animation.animation_finished.connect(stop_animation)
 	#damage_animation.hide()
 	#death_animation.animation_finished.connect(stop_death_animation)
@@ -49,9 +49,13 @@ func take_damage(damage: int):
 		block_flag = false
 		damage -= base_block
 	health -= damage
+	health_label.text = "%d / %d" % [health, max_health]
+	damage_number_animation.play("moving_number")
+	damage_label.text = "-" + str(damage)
 	print("Mage takes damage ", damage)
 	if health <= 0:
 		print("Mage is dead")
+		emit_signal("player_is_dead")
 
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats

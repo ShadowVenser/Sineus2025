@@ -28,7 +28,10 @@ func _ready() -> void:
 	choose_action_screen.connect("cast_spell_on_enemy", player.cast_spell) # Вызывается функция каста у героя с именем закла
 	
 	enemy.deal_damage.connect(player.take_damage) #Нанесение урона врагом вызывает метод получения урона у героя 
-	player.deal_damage.connect(enemy.take_damage) #Нанесение урона героем вызывает метод получения урона у врага 
+	player.deal_damage.connect(enemy.take_damage) #Нанесение урона героем вызывает метод получения урона у врага
+	
+	player.player_is_dead.connect(self.player_death)
+	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
 func _process(delta: float) -> void:
 	if choosing_action:
@@ -37,6 +40,10 @@ func _process(delta: float) -> void:
 		wait_time -= delta
 		return
 	elif wait_time <= 0:
+		if defeated_enemy_flag:
+			defeated_enemy_flag = false
+			new_cycle()
+			return
 		turn_number += 1
 		print("Turn ", turn_number)
 		if player_turn:
@@ -46,12 +53,23 @@ func _process(delta: float) -> void:
 			print("Enemy attacks!")
 			enemy.attack()
 			player_turn = true		
-		set_wait_time(2.0)
+		set_wait_time(1.0)
 		
 func action_pressed():
 	player_turn = false
 	choosing_action = false
 	choose_action_screen.change_visibity(false)
+	
+func player_death():
+	pass
+	
+func enemy_defeated():
+	call_deferred("set_wait_time", 2.0)
+	defeated_enemy_flag = true
+	
+func new_cycle():
+	turn_number = 0
+	enemy.new_enemy()
 		
 func set_wait_time(time: float):
 	wait_time = time
