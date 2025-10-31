@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://8nr30de6hnue"]
+
+[ext_resource type="Script" uid="uid://nxvupmanvx0n" path="res://choose_action_screen/choose_action.gd" id="1_qn75j"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="1_qtdd8"]
+[ext_resource type="Script" uid="uid://cxqrv01n0xfpj" path="res://character_creator/rogue_button.gd" id="2_qn75j"]
+[ext_resource type="PackedScene" uid="uid://du775x5t1r201" path="res://spell_book/spell_book.tscn" id="4_0x31k"]
+
+[node name="choose_action" type="CanvasLayer"]
+script = ExtResource("1_qn75j")
+
+[node name="Control" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="melee_attack" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.8
+anchor_right = 0.2
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qtdd8")
+theme_override_font_sizes/font_size = 30
+text = "melee"
+script = ExtResource("2_qn75j")
+
+[node name="block" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qtdd8")
+theme_override_font_sizes/font_size = 30
+text = "block"
+script = ExtResource("2_qn75j")
+
+[node name="open_book" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_top = 0.8
+anchor_right = 0.8
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qtdd8")
+theme_override_font_sizes/font_size = 30
+text = "spell book"
+script = ExtResource("2_qn75j")
+
+[node name="SpellBook" parent="." instance=ExtResource("4_0x31k")]

@@ -1,0 +1,13 @@
+res://spell_book/spell_book.tscn
+res://spell_book/spell_book.gd
+res://choose_action_screen/choose_action.tscn
+res://choose_action_screen/choose_action.gd
+res://player_mage/mage.tscn
+res://player_mage/mage.gd
+res://new_level/new_level.tscn
+res://level/level.tscn
+res://new_level/new_level.gd
+res://new_enemy/new_enemy.tscn
+res://new_enemy/new_enemy.gd
+res://spell_book/spell.tscn
+res://spell_book/spell.gd

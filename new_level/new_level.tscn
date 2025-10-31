@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cter64asbm100"]
+
+[ext_resource type="Script" uid="uid://1y10nas27uvh" path="res://new_level/new_level.gd" id="1_cr4ar"]
+[ext_resource type="PackedScene" uid="uid://8nr30de6hnue" path="res://choose_action_screen/choose_action.tscn" id="1_yg5ou"]
+[ext_resource type="PackedScene" uid="uid://bfg831at0l2vh" path="res://player_mage/mage.tscn" id="2_4gmwc"]
+[ext_resource type="PackedScene" uid="uid://c1exb7f5de312" path="res://new_enemy/new_enemy.tscn" id="4_xebsd"]
+
+[node name="new_level" type="Node2D"]
+script = ExtResource("1_cr4ar")
+
+[node name="choose_action" parent="." instance=ExtResource("1_yg5ou")]
+
+[node name="mage" parent="." instance=ExtResource("2_4gmwc")]
+position = Vector2(184, 307)
+
+[node name="new_enemy" parent="." instance=ExtResource("4_xebsd")]
+position = Vector2(901, 311)
