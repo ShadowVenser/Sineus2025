@@ -1,5 +1,5 @@
 extends Node2D
-#class_name entity
+class_name Player
 
 signal deal_damage(_damage: int)
 signal player_is_dead()
