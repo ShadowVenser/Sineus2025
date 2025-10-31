@@ -12,7 +12,7 @@ func _init():
 	spell_name = "Scorched earth"
 	damage = 3
 	heal = 0
-	type = 0
+	type = -1
 	description = "Burn ground underneath the enemy"
 
 

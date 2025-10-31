@@ -12,7 +12,7 @@ func _init():
 	spell_name = "Fireball"
 	damage = 5
 	heal = 0
-	type = 0
+	type = -1
 	description = "Throw a basic fireball next round"
 
 

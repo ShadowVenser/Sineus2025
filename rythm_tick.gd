@@ -4,15 +4,15 @@ class_name RythmTick
 var spells: Array[Spell] = []
 
 func add_spell(spell: Spell) -> void:
-	var is_done = false
+	var is_added = true
 	for i in range(len(spells)):
-		if (spell.type != spells[i].type):
-			spells.erase(i)
-			is_done = false
+		if (spell.type == spells[i].type) or (spell.type==0):
+			spells.remove_at(i)
+			is_added = false
 			break
-	if (!is_done):
+	if (is_added):
 		spells.append(spell)
 
-func cast_current_spells() -> void:
+func apply_spells() -> void:
 	for spell in spells:
 		spell.apply()
