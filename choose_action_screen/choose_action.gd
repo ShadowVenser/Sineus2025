@@ -39,7 +39,7 @@ func action_pressed(action_name: String, spell_name: String = ""):
 		emit_signal("cast_spell_on_enemy", spell_name)
 	
 func spell_clicked(spell_name:String):
-	if spell_name == "Exit":
+	if spell_name == "exit":
 		return_to_actions()
 	else:
 		book.hide()
