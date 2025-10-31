@@ -17,6 +17,7 @@ var battle_begins_flag: bool = false
 var defeated_enemy_flag: bool = false
 var defeated_hero_flag: bool = false
 var defeated_hero_flag2: bool = false
+var applying_spells_flag: bool = false
 var loot: String
 
 var choosing_action: bool = false
@@ -44,12 +45,19 @@ func _process(delta: float) -> void:
 		wait_time -= delta
 		return
 	elif wait_time <= 0:
+		if applying_spells_flag:
+			applying_spells_flag = rythm.apply_tick_spell()
+			print("applyed spell")
+			if applying_spells_flag:
+				set_wait_time(0.2)
+			else:
+				set_wait_time(0.6)
+			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false
 			new_cycle()
 			return
 		turn_number += 1
-		rythm.next_tick()
 		print("Turn ", turn_number)
 		if player_turn:
 			choosing_action = true
@@ -57,8 +65,12 @@ func _process(delta: float) -> void:
 		else:
 			print("Enemy attacks!")
 			enemy.attack()
-			player_turn = true		
-		set_wait_time(1.0)
+			player_turn = true
+		if rythm.next_tick():
+			applying_spells_flag = true
+			print("hohohehe")
+		else:
+			set_wait_time(0.6)
 		
 func action_pressed():
 	player_turn = false
