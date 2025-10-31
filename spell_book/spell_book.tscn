@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://du775x5t1r201"]
+
+[ext_resource type="Script" uid="uid://v35sugd7ql13" path="res://spell_book/spell_book.gd" id="1_aib0h"]
+
+[node name="SpellBook" type="CanvasLayer"]
+script = ExtResource("1_aib0h")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonsFlow" type="FlowContainer" parent="Control/MarginContainer/ScrollContainer"]
+layout_mode = 2

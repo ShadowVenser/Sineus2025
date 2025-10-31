@@ -1,7 +1,10 @@
 CanvasLayer
+FlowContainer
+ScrollContainer
+MarginContainer
+Control
 Label
 RichTextLabel
-Control
 AnimatedSprite2D
 TextureRect
 AnimationPlayer
@@ -9,5 +12,3 @@ AudioStreamPlayer2D      - Matches the "sound" keyword.
 Node2D
 Panel
 Button
-Label      - Matches the "text" keyword.
-Sprite2D

@@ -1,35 +1,35 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761901523
+::res://::1761903615
 export_presets.cfg::TextFile::-1::1760263207::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::5824853287545027535::1759057183::1759057187::1::::<><><>0<>0<>77d3c1b90b81b712451462223187ad4e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://backgrounds/::1760186131
+::res://backgrounds/::1761903488
 back2.jpg::CompressedTexture2D::8418635305134364320::1759163236::1759163306::1::::<><><>0<>0<>ad0dd4d37acdf98be80aff7b7960343d<>res://.godot/imported/back2.jpg-ba8ecb27b7af98a9b61d6bb07bb33a63.ctex::
-::res://character_creator/::1760186131
+::res://character_creator/::1761903488
 character_creator.tscn::PackedScene::8494426406739213617::1759249718::0::1::::<><><>0<>0<><>::uid://cxqrv01n0xfpj::::res://character_creator/rogue_button.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
 rogue_button.gd::GDScript::6421285859548583683::1759147158::0::1::::<>Button<><>0<>0<><>::
-::res://enemy/::1760186579
+::res://enemy/::1761903488
 enemy.gd::GDScript::671048304664269517::1760186579::0::1::::<>entity<><>0<>0<><>::
 enemy.tscn::PackedScene::137582422028793458::1759236220::0::1::::<><><>0<>0<><>::uid://jtcckcpmu6ar::::res://enemy/enemy.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png
-::res://fonts/::1760186131
+::res://fonts/::1761903488
 ofont.ru_Serati.ttf::FontFile::2578031518845108103::1759153629::1759153755::1::::<><><>0<>0<>734e80a5555fbae0fa9ac69aaedac26a<>res://.godot/imported/ofont.ru_Serati.ttf-8fabbad2555f2fec8e4a2906a15e967c.fontdata::
-::res://level/::1760186579
+::res://level/::1761903488
 level.gd::GDScript::7026932335609984984::1760186350::0::1::::<>Node2D<><>0<>0<><>::
 level.tscn::PackedScene::1434705164834256698::1760186579::0::1::::<><><>0<>0<><>::uid://c7d5sws0lnfpo::::res://level/level.gd<>uid://dta07x6ir0ctl::::res://character_creator/character_creator.tscn<>uid://dr7bxtxh0km8o::::res://backgrounds/back2.jpg<>uid://cy774ol4fe3dr::::res://loot_offer/canvas_layer.tscn<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://chyst0w660inr::::res://player/player.tscn<>uid://b7v7yr1dj4ag::::res://enemy/enemy.tscn<>uid://djek4mwy0rp0n::::res://victory_screen/victory_screen.tscn
-::res://loot_offer/::1760186131
+::res://loot_offer/::1761903488
 canvas_layer.tscn::PackedScene::6525429188264910263::1759333243::0::1::::<><><>0<>0<><>::uid://cxqrv01n0xfpj::::res://character_creator/rogue_button.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf
-::res://player/::1760186350
+::res://player/::1761903488
 entity.gd::GDScript::831736808067531562::1760186350::0::1::::entity<>Node2D<><>0<>0<><>::
 player.gd::GDScript::7868667142127619823::1760186350::0::1::::<>entity<><>0<>0<><>::
 player.tscn::PackedScene::5314836523424220419::1759303398::0::1::::<><><>0<>0<><>::uid://dkdv2eyu8tvk6::::res://player/player.gd<>uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://b8qhnlm5mlpwk::::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/sprite-sheet.png<>uid://da4cuf2n8aqcd::::res://vfx/Yellow Effect Bullet Impact Explosion 32x32.png<>uid://ucgue5dgv8vd::::res://sfx/sword-clash-241729.mp3
-::res://sfx/::1760186131
+::res://sfx/::1761903489
 sword-clash-241729.mp3::AudioStreamMP3::1408305902686185529::1759159502::1759159654::1::::<><><>0<>0<>dacd8e29a16ff38defa962838db96c91<>res://.godot/imported/sword-clash-241729.mp3-bdd68f48d56dc13095e0b82015576fcd.mp3str::
 sword-clashhit-393837.mp3::AudioStreamMP3::3344128585250359271::1759159535::1759159654::1::::<><><>0<>0<>d66f52a2f04057c043550d801da08062<>res://.godot/imported/sword-clashhit-393837.mp3-0f47ba6c2ed545a100ef099948903435.mp3str::
 sword-slice-2-393845.mp3::AudioStreamMP3::6736819429841354388::1759159476::1759159654::1::::<><><>0<>0<>a122ca15e1a0b43291635cbf0f446113<>res://.godot/imported/sword-slice-2-393845.mp3-b18dd40068475abd957edc0f7ab5c7a8.mp3str::
 sword-slice-393847.mp3::AudioStreamMP3::2190518629935193098::1759159472::1759159654::1::::<><><>0<>0<>5735dcc5415a0db215adda7255d7835f<>res://.godot/imported/sword-slice-393847.mp3-69179fdcbe0d0106e32b629b4f29b6ba.mp3str::
-::res://vfx/::1760186131
+::res://vfx/::1761903489
 Yellow Effect Bullet Impact Explosion 32x32.png::CompressedTexture2D::7219286460771915639::1679837943::1759228019::1::::<><><>0<>0<>76ab39b8994906ac7d9975b27a88b92a<>res://.godot/imported/Yellow Effect Bullet Impact Explosion 32x32.png-889823e06e1f99dc48039cccfedf5ef1.ctex::
-::res://vfx/Pixel Art Animations - Warrior (FREE)/::1760186131
-::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/::1760186131
+::res://vfx/Pixel Art Animations - Warrior (FREE)/::1761903489
+::res://vfx/Pixel Art Animations - Warrior (FREE)/VFX 1/::1761903489
 sprite-sheet.png::CompressedTexture2D::4736131399757308810::1729360076::1759155139::1::::<><><>0<>0<>6b20bc1f81e399bddfb9d6a119545d61<>res://.godot/imported/sprite-sheet.png-069f180633ee6550169b591af3465a22.ctex::
-::res://victory_screen/::1760186131
+::res://victory_screen/::1761903489
 victory_screen.tscn::PackedScene::7799878778179184179::1759306469::0::1::::<><><>0<>0<><>::uid://bcy22jv5sfuot::::res://fonts/ofont.ru_Serati.ttf<>uid://cxqrv01n0xfpj::::res://character_creator/rogue_button.gd
