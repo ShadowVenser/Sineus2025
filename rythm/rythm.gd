@@ -12,11 +12,25 @@ func get_tick(tick:int) -> RythmTick:
 	
 
 func add(spell: Spell, round_diff:int) -> void:
+	print("adding spell to "+str(current_tick+round_diff))
 	get_tick(current_tick+round_diff).add_spell(spell)
 	
-func next_tick() -> void:
-	get_tick(current_tick).apply_spells()
-	current_tick+=1
+#true - spells to cast; false - no spells	
+func next_tick()-> bool:
+	var spellsPresent = get_tick(current_tick).prepare_applying_spells()
+	if !spellsPresent:
+		current_tick+=1
+		print("current tick now "+str(current_tick))
+	return spellsPresent
+	
+#true - spells to cast; false - no spells	
+func apply_tick_spell() -> bool:
+	var spellsPresent = get_tick(current_tick).next_spell()
+	if !spellsPresent:
+		current_tick+=1
+		print("current tick now "+str(current_tick))
+	return spellsPresent
+	
 	
 func time_jump(diff: int) -> void:
 	current_tick += diff
