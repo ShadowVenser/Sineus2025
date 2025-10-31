@@ -26,4 +26,5 @@ func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
 
 # Метод для применения эффектов (должен быть переопределен)
 func apply() -> void:
+	
 	print("применилось в конкретный такт")

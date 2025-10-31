@@ -13,8 +13,12 @@ signal player_is_dead()
 @onready var damage_number_animation = $Control/damage_lable/AnimationPlayer
 @onready var clash_sound = $AudioStreamPlayer2D
 
-const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
-preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
+#const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
+#preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
+
+var all_spells: Dictionary = {"fireball": FireballSpell, "scorched_earth": ScorchedEarthSpell, "freeze": FreezeSpell, "heal": HealSpell}
+var enemy: Enemy
+var rythm: WorldRythm
 
 var health: int = 10
 var max_health: int = 10
@@ -41,7 +45,8 @@ func block():
 	block_flag = true
 	
 func cast_spell(spell_name:String):
-	print("Mage is casting ", spell_name)
+	var obj = all_spells[spell_name].new()
+	obj.cast(self, enemy, rythm)
 	
 	
 func take_damage(damage: int):

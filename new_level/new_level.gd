@@ -34,6 +34,9 @@ func _ready() -> void:
 	player.player_is_dead.connect(self.player_death)
 	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
+	player.enemy = $new_enemy
+	player.rythm = rythm
+	
 func _process(delta: float) -> void:
 	if choosing_action:
 		return
