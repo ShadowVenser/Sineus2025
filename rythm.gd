@@ -6,7 +6,8 @@ var current_tick = 0
 
 func get_tick(tick:int) -> RythmTick:
 	if timeline.size() < tick+1:
-		timeline.resize(tick+5)
+		while (timeline.size() < tick+5):
+			timeline.append(RythmTick.new())
 	return timeline[tick]
 	
 
@@ -20,3 +21,10 @@ func next_tick() -> void:
 func time_jump(diff: int) -> void:
 	current_tick += diff
 	
+func tick_remove(diff: int) -> void:
+	if timeline.size() > current_tick+diff:
+		timeline.remove_at(current_tick+diff)
+		
+func tick_duplicate(diff: int) -> void:
+	if timeline.size() > current_tick+diff:
+		timeline.insert(current_tick+diff+1, timeline[current_tick+diff])
