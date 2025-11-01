@@ -8,6 +8,8 @@ extends Node2D
 @onready var spells_animations = $choose_action/spells_animations
 @onready var secondary_animations = $choose_action/secondary_animations
 @onready var enemy_death_animation = $choose_action/enemy_death
+@onready var death_screen = $choose_action/death_screen
+@onready var victory_screen = $choose_action/next_enemy
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -18,9 +20,9 @@ var choosing_class: bool = true
 var choosing_weapon: bool = false
 var victory_flag: bool = false
 var victory_flag2: bool = false
-var battle_begins_flag: bool = false
 var defeated_enemy_flag: bool = false
 var defeated_enemy_flag2: bool = false
+var defeated_enemy_flag3: bool = false
 var defeated_hero_flag: bool = false
 var defeated_hero_flag2: bool = false
 var applying_spells_flag: bool = false
@@ -48,18 +50,28 @@ func _ready() -> void:
 	secondary_animations.hide()
 	enemy_death_animation.hide()
 	defeated_enemy_label.hide()
-	
+	death_screen.hide()
+	death_screen.get_child(0).connect("button_down", go_to_main_menu)
+	death_screen.get_child(1).connect("button_down", retry)
+	victory_screen.hide()
+	victory_screen.get_child(0).connect("button_down", go_to_main_menu)
+	victory_screen.get_child(1).connect("button_down", new_cycle)
+	enemy.new_enemy()
 	player.enemy = enemy
 	choose_action_screen.player = player
 	player.rythm = rythm
 	
 func _process(delta: float) -> void:
-	if choosing_action:
+	if choosing_action or defeated_enemy_flag3:
 		return
 	if wait_time > 0:
 		wait_time -= delta
 		return
 	elif wait_time <= 0:
+		if defeated_hero_flag:
+			defeated_hero_flag2 = true
+			player_death2()
+			return
 		if applying_spells_flag:
 			var spell_name = rythm.get_next_casted()
 			play_animation(spell_name)
@@ -68,7 +80,7 @@ func _process(delta: float) -> void:
 			if applying_spells_flag:
 				set_wait_time(2.0)
 			else:
-				set_wait_time(1.0)
+				set_wait_time(1.1)
 			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false
@@ -76,7 +88,7 @@ func _process(delta: float) -> void:
 			return
 		if defeated_enemy_flag2:
 			defeated_enemy_flag2 = false
-			new_cycle()
+			enemy_defeated3()
 			return
 		if player_turn:
 			turn_number += 1
@@ -106,25 +118,40 @@ func action_pressed():
 	choose_action_screen.change_visibity(false)
 	
 func player_death():
-	pass
+	defeated_hero_flag = true
+	spells_animations.show()
+	play_animation("Death nova")
+	player.hide()
+	call_deferred("set_wait_time", 3.0)
+	
+func player_death2():
+	defeated_hero_flag = true
+	player.hide()
+	enemy.hide()
+	death_screen.show()
 	
 func enemy_defeated():
 	player_turn = true
 	$choose_action/SpellBook.change_size()
 	player.add_spell()
-	call_deferred("set_wait_time", 2.0)
+	call_deferred("set_wait_time", 1.0)
 	defeated_enemy_flag = true
 	
 func enemy_defeated2():
 	enemy_death_animation.show()
 	enemy_death_animation.play("death")
-	call_deferred("set_wait_time", 5.0)
+	call_deferred("set_wait_time", 2.0)
 	enemy.hide()
 	defeated_enemy_flag2 = true
-	defeated_enemy_label.show()
+	
+func enemy_defeated3():
+	defeated_enemy_flag3 = true
+	victory_screen.show()
 	
 func new_cycle():
-	defeated_enemy_label.hide()
+	victory_screen.hide()
+	defeated_enemy_flag3 = false
+	#defeated_enemy_label.hide()
 	turn_number = 0
 	enemy.new_enemy()
 	enemy.show()
@@ -142,12 +169,17 @@ func play_animation(spell_name: String):
 	spells_animations.play(spell_name)
 	
 func stop_animation():
-	print("HIDE")
 	spells_animations.hide()
 	secondary_animations.hide()
 	
 func stop_enemy_death_animation():
 	enemy_death_animation.hide()
+	
+func go_to_main_menu():
+	get_tree().change_scene_to_file("res://main_menu/main_menu.tscn")
+	
+func retry():
+	get_tree().reload_current_scene()
 		
 func set_wait_time(time: float):
 	wait_time = time

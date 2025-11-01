@@ -18,6 +18,7 @@ func _init():
 
 
 func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
+	pl.get_parent().get_parent().play_animation("Time hold")
 	for i in range(casts):
 		rythm.tick_remove(delay + period*i)
 	

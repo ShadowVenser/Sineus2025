@@ -54,6 +54,10 @@ var current_dementia: Array[String] = [
 
 func heal(heal: int) -> void:
 	health = min(health + heal, max_health)
+	health_label.text = "%d / %d" % [health, max_health]
+	damage_label.add_theme_color_override("font_color", Color(0, 1, 0))
+	damage_number_animation.play("moving_number")
+	damage_label.text = "+" + str(heal)
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
@@ -76,18 +80,16 @@ func block():
 func cast_spell(spell_name:String):
 	var obj = all_spells[spell_name].new()
 	obj.cast(self, enemy, rythm)
-	animations.show()
-	
+	animations.show()	
 	animations.play("cast_spell")
-	
-	
-	
+
 func take_damage(damage: int):
 	if block_flag:
 		block_flag = false
 		damage -= base_block
 	health -= damage
 	health_label.text = "%d / %d" % [health, max_health]
+	damage_label.add_theme_color_override("font_color", Color(1, 0, 0))
 	damage_number_animation.play("moving_number")
 	damage_label.text = "-" + str(damage)
 	print("Mage takes damage ", damage)

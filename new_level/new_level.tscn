@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cter64asbm100"]
+[gd_scene load_steps=99 format=3 uid="uid://cter64asbm100"]
 
 [ext_resource type="Script" uid="uid://1y10nas27uvh" path="res://new_level/new_level.gd" id="1_cr4ar"]
 [ext_resource type="PackedScene" uid="uid://8nr30de6hnue" path="res://choose_action_screen/choose_action.tscn" id="1_yg5ou"]
@@ -9,6 +9,55 @@
 [ext_resource type="Texture2D" uid="uid://cvvthk11a3gvu" path="res://new_level/Water Effect and Bullet 16x16.png" id="6_f1umi"]
 [ext_resource type="Script" uid="uid://c54jeknqdvg6n" path="res://new_level/spells_animations.gd" id="7_f1umi"]
 [ext_resource type="Texture2D" uid="uid://lv50kfu3fad7" path="res://new_level/Green Effect and Bullet 16x16.png" id="8_gnfbt"]
+[ext_resource type="Texture2D" uid="uid://ceyr70ge56evh" path="res://new_level/Purple Effect and Bullet 16x16.png" id="9_87mdq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knctr"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(224, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_araxa"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(240, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1ssn"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(256, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4jnb"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(272, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shqcl"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(224, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htqx2"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(240, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ed1k"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(256, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o000v"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(272, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e2bc"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(272, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kn5t"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(256, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqww8"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(240, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxekx"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(224, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1umi"]
 atlas = ExtResource("5_sfcjj")
@@ -206,8 +255,85 @@ region = Rect2(336, 112, 16, 16)
 atlas = ExtResource("6_f1umi")
 region = Rect2(352, 112, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsfuw"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(384, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmgwj"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(400, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw5d1"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(416, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt8x8"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(432, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e82i2"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(448, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6mqq"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(432, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilu5r"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(416, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8ium"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(400, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrvoq"]
+atlas = ExtResource("9_87mdq")
+region = Rect2(384, 16, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_stvai"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knctr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_araxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1ssn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4jnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shqcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htqx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ed1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o000v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e2bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kn5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqww8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxekx")
+}],
+"loop": false,
+"name": &"Death nova",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1umi")
@@ -389,6 +515,38 @@ animations = [{
 "loop": false,
 "name": &"Self freeze",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsfuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmgwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw5d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt8x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e82i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6mqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilu5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8ium")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrvoq")
+}],
+"loop": false,
+"name": &"Time hold",
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3jgv"]
@@ -520,10 +678,8 @@ script = ExtResource("1_cr4ar")
 [node name="Control" parent="choose_action" index="1"]
 z_index = 1
 
-[node name="SpellBook" parent="choose_action" index="2"]
-visible = false
-
 [node name="defeated_enemy_label" type="Label" parent="choose_action"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.1
@@ -548,7 +704,7 @@ position = Vector2(901, 311)
 position = Vector2(954, 304.00003)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_stvai")
-animation = &"Self freeze"
+animation = &"Time hold"
 script = ExtResource("7_f1umi")
 
 [node name="secondary_animations" type="AnimatedSprite2D" parent="choose_action"]
@@ -565,5 +721,106 @@ scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_8u8fb")
 animation = &"death"
 frame_progress = 0.51349163
+
+[node name="death_screen" type="CanvasLayer" parent="choose_action"]
+
+[node name="main_menu" type="Button" parent="choose_action/death_screen"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.3
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="retry" type="Button" parent="choose_action/death_screen"]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "RETRY"
+
+[node name="death_label" type="Label" parent="choose_action/death_screen"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 40
+text = "DEMENTIA WINS!"
+
+[node name="next_enemy" type="CanvasLayer" parent="choose_action"]
+
+[node name="main_menu" type="Button" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.3
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="next" type="Button" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "NEXT BATTLE"
+
+[node name="win_label" type="Label" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 12
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 40
+text = "ENEMY IS DEFEATED!
+CONTINUE JOURNEY?"
+horizontal_alignment = 1
 
 [editable path="choose_action"]
