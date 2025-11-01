@@ -13,7 +13,7 @@ func _init():
 	damage = 3
 	heal = 0
 	type = -1
-	description = "Burn ground underneath the enemy"
+	description = "Burn ground underneath the enemy for several rounds"
 
 
 # Метод для записывания в мировое время
@@ -23,5 +23,5 @@ func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
 
 # Метод для применения эффектов 
 func apply() -> void:
-	enemy.take_damage(damage, type)
+	enemy.take_damage(damage)
 	
