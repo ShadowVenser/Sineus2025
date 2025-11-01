@@ -10,6 +10,7 @@ extends Node2D
 @onready var enemy_death_animation = $choose_action/enemy_death
 @onready var death_screen = $choose_action/death_screen
 @onready var victory_screen = $choose_action/next_enemy
+@onready var rythm_line = $choose_action/rythm_line
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -60,6 +61,7 @@ func _ready() -> void:
 	player.enemy = enemy
 	choose_action_screen.player = player
 	player.rythm = rythm
+	rythm.rythmLine = rythm_line
 	
 func _process(delta: float) -> void:
 	if choosing_action or defeated_enemy_flag3:
