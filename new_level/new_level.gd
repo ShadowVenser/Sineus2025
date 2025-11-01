@@ -100,7 +100,9 @@ func new_cycle():
 	enemy.new_enemy()
 	
 func play_animation(spell_name: String):
-	print("SPELL NAME: ",spell_name)
+	print("SPELL NAME: ", spell_name)
+	spells_animations.position = spells_animations.spells[spell_name][0]
+	spells_animations.scale = spells_animations.spells[spell_name][1]
 	spells_animations.show()
 	spells_animations.play(spell_name)
 	
