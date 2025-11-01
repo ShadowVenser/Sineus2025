@@ -87,6 +87,8 @@ func take_damage(damage: int):
 	if block_flag:
 		block_flag = false
 		damage -= base_block
+	if damage < 0:
+		damage = 0
 	health -= damage
 	health_label.text = "%d / %d" % [health, max_health]
 	damage_label.add_theme_color_override("font_color", Color(1, 0, 0))
