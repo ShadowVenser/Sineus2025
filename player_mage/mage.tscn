@@ -252,7 +252,9 @@ sprite_frames = SubResource("SpriteFrames_4wwky")
 animation = &"block"
 
 [node name="melee" type="AnimatedSprite2D" parent="."]
-position = Vector2(740, 160)
+z_index = 1
+z_as_relative = false
+position = Vector2(770, 40)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_wvg4g")
 animation = &"swing"
