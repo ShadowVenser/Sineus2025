@@ -33,7 +33,7 @@ func apply_tick_spell() -> bool:
 	return spellsPresent
 	
 func get_next_casted() -> String:
-	return get_tick(current_tick).next_spell_name()
+	return get_tick(current_tick).next_spell().spell_name
 	
 	
 func time_jump(diff: int) -> void:

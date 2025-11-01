@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cter64asbm100"]
+[gd_scene load_steps=30 format=3 uid="uid://cter64asbm100"]
 
 [ext_resource type="Script" uid="uid://1y10nas27uvh" path="res://new_level/new_level.gd" id="1_cr4ar"]
 [ext_resource type="PackedScene" uid="uid://8nr30de6hnue" path="res://choose_action_screen/choose_action.tscn" id="1_yg5ou"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1exb7f5de312" path="res://new_enemy/new_enemy.tscn" id="4_xebsd"]
 [ext_resource type="Texture2D" uid="uid://vid8ptle6cp0" path="res://new_level/Fire Effect and Bullet 16x16.png" id="5_sfcjj"]
 [ext_resource type="Texture2D" uid="uid://cvvthk11a3gvu" path="res://new_level/Water Effect and Bullet 16x16.png" id="6_f1umi"]
+[ext_resource type="Script" uid="uid://c54jeknqdvg6n" path="res://new_level/spells_animations.gd" id="7_f1umi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3pa4"]
 atlas = ExtResource("5_sfcjj")
@@ -199,5 +200,6 @@ position = Vector2(954, 304.00003)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_stvai")
 animation = &"Scorched earth"
+script = ExtResource("7_f1umi")
 
 [editable path="choose_action"]
