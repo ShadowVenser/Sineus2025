@@ -32,8 +32,8 @@ func apply_tick_spell() -> bool:
 		print("current tick now "+str(current_tick))
 	return spellsPresent
 	
-func get_next_casted() -> Spell:
-	return get_tick(current_tick).next_spell()
+func get_next_casted() -> String:
+	return get_tick(current_tick).next_spell().spell_name
 	
 	
 func time_jump(diff: int) -> void:
