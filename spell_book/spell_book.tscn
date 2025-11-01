@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://e2vvgsxxi07l" path="res://backgrounds/UI_TravelBook_BookPageLeft01a.png" id="3_fl3mm"]
 
 [node name="SpellBook" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_aib0h")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -34,6 +35,7 @@ texture = ExtResource("3_fl3mm")
 flip_h = true
 
 [node name="Control" type="Control" parent="."]
+visibility_layer = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

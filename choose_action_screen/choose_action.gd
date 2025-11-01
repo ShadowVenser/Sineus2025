@@ -51,6 +51,8 @@ func return_to_actions():
 	
 func change_visibity(flag: bool):
 	if flag:
-		self.show()
+		$Control.show()
+		#$SpellBook.show()
 	else:
-		self.hide()
+		$Control.hide()
+		#$SpellBook.hide()
