@@ -1,4 +1,4 @@
-extends Spell
+extends DementiaSpell
 
 class_name SelfFreezeEffect
 
@@ -10,6 +10,18 @@ func _init():
 	#picture = 
 
 	spell_name = "Self freeze"
+	dementia_spell_name = [
+		"Self freeze", 
+		"Super freeze", 
+		"Rain yourself",
+		 "????"
+	]
+	dementia_description = [
+		"you freeze yourself!",
+		"you freeze everything around you",
+		"you release some nice rain to become cool",
+		"??????"
+	]
 	damage = 3
 	heal = 0
 	type = 1

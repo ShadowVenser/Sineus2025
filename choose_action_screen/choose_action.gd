@@ -30,6 +30,8 @@ func spell_book_pressed():
 	$Control.hide()
 	$mage.hide()
 	$new_enemy.hide()
+	if (Player.all_dementia_spells.has(SBookSpell.names[-1])):
+		SBookSpell.names.pop_back()
 	var spells: Array[Spell] = []
 	
 	for sn in SBookSpell.names:

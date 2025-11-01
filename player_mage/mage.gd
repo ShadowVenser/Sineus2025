@@ -29,7 +29,7 @@ static var all_spells: Dictionary = {
 }
 
 static var all_dementia_spells: Array[String] = [
-	"time_skip", "time_hold"
+	"self_burn", "self_freeze", "time_skip", "time_hold"
 ]
 
 var available_spells: Array[String] = [
