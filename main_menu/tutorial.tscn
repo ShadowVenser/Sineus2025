@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnc5gm3ehs7en"]
+[gd_scene load_steps=9 format=3 uid="uid://cnc5gm3ehs7en"]
 
 [ext_resource type="Script" uid="uid://c1lwhqmxnvru4" path="res://main_menu/tutorial.gd" id="1_3ut3s"]
 [ext_resource type="Texture2D" uid="uid://bvwn1xl1apqmh" path="res://backgrounds/Vamp Castle BG.png" id="1_5mgtg"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dpfg3g47i3aii" path="res://fonts/bitcell_memesbruh03.ttf" id="4_bxrtj"]
 [ext_resource type="Texture2D" uid="uid://cqloemlw0kdxv" path="res://ui/UI_TravelBook_FrameSelect01a.png" id="5_h2vug"]
 [ext_resource type="Texture2D" uid="uid://bxbs7nf707qcn" path="res://ui/UI_TravelBook_FrameSelect01b.png" id="6_v02xc"]
+[ext_resource type="Texture2D" uid="uid://cewn4yk5hw61b" path="res://ui/image_2025-11-01_18-14-29.png" id="7_bxrtj"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_3ut3s")
@@ -99,6 +100,7 @@ offset_bottom = 582.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("5_h2vug")
+texture_pressed = ExtResource("7_bxrtj")
 texture_hover = ExtResource("6_v02xc")
 ignore_texture_size = true
 stretch_mode = 0
