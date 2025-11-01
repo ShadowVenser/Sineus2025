@@ -44,22 +44,25 @@ anchor_bottom = 0.05
 offset_top = 1.0
 offset_bottom = 1.0
 
-[node name="Sprite2D" parent="Control/exit" index="0"]
+[node name="Paper" parent="Control/exit" index="0"]
 visible = false
 
 [node name="Button" parent="Control/exit" index="1"]
-offset_left = -179.0
-offset_top = 552.0
-offset_right = -87.0
-offset_bottom = 607.0
+offset_left = -174.0
+offset_top = 553.0
+offset_right = -82.0
+offset_bottom = 608.0
 
-[node name="Label" parent="Control/exit" index="2"]
-offset_left = -194.0
-offset_top = 558.0
-offset_right = -66.0
-offset_bottom = 598.0
-text = "EXIT"
-horizontal_alignment = 1
+[node name="sp_name" parent="Control/exit" index="2"]
+offset_left = -178.0
+offset_top = 566.0
+offset_right = -74.0
+offset_bottom = 599.0
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="sp_desc" parent="Control/exit" index="3"]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 visible = false

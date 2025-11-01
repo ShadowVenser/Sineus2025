@@ -16,7 +16,7 @@ signal player_is_dead()
 #const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
 #preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
 
-var all_spells: Dictionary = {"fireball": FireballSpell, "scorched_earth": ScorchedEarthSpell, "freeze": FreezeSpell, "heal": HealSpell}
+static var all_spells: Dictionary = {"fireball": FireballSpell, "scorched_earth": ScorchedEarthSpell, "freeze": FreezeSpell, "heal": HealSpell}
 var enemy: Enemy
 var rythm: WorldRythm
 
