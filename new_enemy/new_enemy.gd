@@ -9,14 +9,16 @@ const enemy_type: Dictionary = {"goblin": {"name": "goblin", "health": Vector2(5
 "gnome": {"name": "gnome", "health": Vector2(10,12), "damage": Vector2(2,4)}, 
 "ghost": {"name": "ghost", "health": Vector2(6,8), "damage": Vector2(2,3)}, 
 "golem": {"name": "golem", "health": Vector2(12,14), "damage": Vector2(3,5)}, 
-"dragon": {"name": "dragon", "health": Vector2(18,22), "damage": Vector2(4,6)} }
+"dragon": {"name": "dragon", "health": Vector2(18,22), "damage": Vector2(4,6)}, 
+"boss": {"name": "dementia", "health": Vector2(30,40), "damage": Vector2(6,8)} }
 
 const enemy_sprites: Dictionary = {"goblin": {"sprite":  preload("res://new_enemy/sprites/Maple Tree.png"), "scale": Vector2(12,12), "position": Vector2(50,60)}, 
 "golem": {"sprite":  preload("res://new_enemy/sprites/door.png"), "scale": Vector2(20,20), "position": Vector2(50,60)}, 
 "gnome": {"sprite":  preload("res://new_enemy/sprites/Fence's copiar.png"), "scale": Vector2(20,20), "position": Vector2(50,200)}, 
 "ghost": {"sprite":  null, "scale": Vector2(10,10), "position": Vector2(50,60)}, 
 "slime": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)}, 
-"dragon":{"sprite":  preload("res://new_enemy/sprites/House.png"), "scale": Vector2(6.5,6.5), "position": Vector2(50,60)} }
+"dragon":{"sprite":  preload("res://new_enemy/sprites/House.png"), "scale": Vector2(6.5,6.5), "position": Vector2(50,60)},
+"boss": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)} }
 
 
 @onready var name_label = $Control/label
@@ -39,6 +41,7 @@ var base_melee_damage: int
 var turn_counter: int = 0
 var damage_type: String = ""
 var effects: Effect = Effect.new()
+var enemy_counter: int = 0
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
@@ -76,7 +79,12 @@ func change_visibility(flag: bool):
 	name_label.visible = flag
 	
 func new_enemy():
-	var random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 1)]
+	enemy_counter += 1
+	var random_key
+	if enemy_counter == 7:
+		random_key = "boss"
+	else:
+		random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 2)]
 	#random_key = "slime"
 	stats = enemy_type[random_key]
 	sprite_stats = enemy_sprites[random_key]
