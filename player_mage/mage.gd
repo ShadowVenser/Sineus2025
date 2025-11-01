@@ -22,21 +22,19 @@ static var all_spells: Dictionary = {
 	"freeze": FreezeSpell, 
 	"heal": HealSpell,
 	"nova": NovaSpell,
-	"time_skip": TimeSkipDementia
+	"self_burn": SelfBurnEffect,
+	"self_freeze": SelfFreezeEffect,
+	"time_skip": TimeSkipDementia, 
+	"time_hold": TimeHoldDementia,
 }
 
 static var all_dementia_spells: Array[String] = [
-	"time_skip", 
+	"time_skip", "time_hold"
 ]
 
 var available_spells: Array[String] = [
 	"fireball",
 	"heal",
-	"scorched_earth", 
-	"freeze",
-	"fireball",
-	"heal",
-	"scorched_earth", 
 ]
 
 var enemy: Enemy
@@ -100,7 +98,9 @@ func get_current_spells() -> Array[String]:
 	return current_spells
 
 func set_dementia_spell()->void:
-	if (randf()<1):
+	var x = randf()
+	if (x<0.35):
+		print("FUCK!")
 		current_dementia[0] = all_dementia_spells[randi_range(0, all_dementia_spells.size() - 1)]
 		var spell: DementiaSpell = all_spells[current_dementia[0]].new()
 		current_dementia[1] = spell.get_spell_name()
