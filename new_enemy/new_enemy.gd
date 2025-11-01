@@ -84,6 +84,9 @@ func new_enemy():
 	effects.zero()
 	var random_key
 	if enemy_counter == 7:
+		var new_scene = load("res://main_menu/main_menu.tscn")
+		get_tree().change_scene_to_packed(new_scene)
+	if enemy_counter == 7:
 		random_key = "boss"
 	else:
 		random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 2)]
