@@ -16,3 +16,4 @@ func spell_clicked():
 		assigned_spell = names[index]
 		emit_signal("clicked", assigned_spell)
 	
+	

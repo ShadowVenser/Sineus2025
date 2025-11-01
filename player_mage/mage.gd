@@ -23,9 +23,14 @@ static var all_spells: Dictionary = {
 	"heal": HealSpell
 }
 
-var available_spells = [
+var available_spells: Array[String] = [
 	"fireball",
-	"heal"
+	"heal",
+	"scorched_earth", 
+	"freeze",
+	"fireball",
+	"heal",
+	"scorched_earth", 
 ]
 
 var enemy: Enemy
@@ -77,7 +82,12 @@ func take_damage(damage: int):
 		emit_signal("player_is_dead")
 
 func get_current_spells() -> Array[String]:
-	return ["fireball", "scorched_earth", "freeze", "", ""]
+	if available_spells.size() <= 4:
+		return available_spells.duplicate()
+	var current_spells = available_spells.duplicate()
+	while current_spells.size() > 4:
+		current_spells.erase(current_spells[randi_range(0, current_spells.size() - 1)])
+	return current_spells
 
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats
