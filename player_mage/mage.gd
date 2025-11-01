@@ -111,6 +111,10 @@ func set_dementia_spell()->void:
 func get_dementia_spell()->Array[String]:
 	return current_dementia
 
+func add_spell():
+	if (available_spells.size() < 5):
+		available_spells.append(all_spells.keys()[available_spells.size()])
+
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats
 	
