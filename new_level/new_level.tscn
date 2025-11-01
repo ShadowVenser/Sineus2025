@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cter64asbm100"]
+[gd_scene load_steps=77 format=3 uid="uid://cter64asbm100"]
 
 [ext_resource type="Script" uid="uid://1y10nas27uvh" path="res://new_level/new_level.gd" id="1_cr4ar"]
 [ext_resource type="PackedScene" uid="uid://8nr30de6hnue" path="res://choose_action_screen/choose_action.tscn" id="1_yg5ou"]
@@ -154,6 +154,58 @@ region = Rect2(256, 160, 16, 16)
 atlas = ExtResource("5_sfcjj")
 region = Rect2(272, 160, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5888p"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlnoq"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4j7y"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myqsq"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sv1l"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kguqj"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(304, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ht5n"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(320, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xfr6"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(336, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx07b"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(352, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a11sg"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(304, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75p80"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(320, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhlyw"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(336, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv2uc"]
+atlas = ExtResource("6_f1umi")
+region = Rect2(352, 112, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_stvai"]
 animations = [{
 "frames": [{
@@ -287,6 +339,55 @@ animations = [{
 }],
 "loop": false,
 "name": &"Scorched earth",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5888p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlnoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4j7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myqsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sv1l")
+}],
+"loop": false,
+"name": &"Self burn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kguqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ht5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xfr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx07b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a11sg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75p80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhlyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv2uc")
+}],
+"loop": false,
+"name": &"Self freeze",
 "speed": 8.0
 }]
 
@@ -447,7 +548,7 @@ position = Vector2(901, 311)
 position = Vector2(954, 304.00003)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_stvai")
-animation = &"Heal"
+animation = &"Self freeze"
 script = ExtResource("7_f1umi")
 
 [node name="secondary_animations" type="AnimatedSprite2D" parent="choose_action"]
