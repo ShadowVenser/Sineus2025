@@ -24,6 +24,7 @@ var defeated_enemy_flag2: bool = false
 var defeated_hero_flag: bool = false
 var defeated_hero_flag2: bool = false
 var applying_spells_flag: bool = false
+var applying_spells_flag2: bool = false
 var loot: String
 
 var choosing_action: bool = false
@@ -86,13 +87,17 @@ func _process(delta: float) -> void:
 			choosing_action = true
 			choose_action_screen.change_visibity(true)
 		else:
-			print("Enemy attacks!")
-			enemy.attack()
+			if applying_spells_flag2 == false:
+				if rythm.next_tick():
+					applying_spells_flag = true
+					applying_spells_flag2 = true
+					print("hohohehe")
+					return
+			if not defeated_enemy_flag:
+				print("Enemy attacks!")
+				enemy.attack()
 			player_turn = true
-			if rythm.next_tick():
-				applying_spells_flag = true
-				print("hohohehe")
-				return
+			applying_spells_flag2 = false
 		set_wait_time(0.6)
 		
 func action_pressed():
