@@ -6,25 +6,33 @@ signal enemy_is_dead()
 
 const enemy_type: Dictionary = {"goblin": {"name": "goblin", "health": Vector2(5,7), "damage": Vector2(1,3)}, 
 "slime": {"name": "slime", "health": Vector2(8,10), "damage": Vector2(1,3)}, 
-"skeleton": {"name": "skeleton", "health": Vector2(10,12), "damage": Vector2(2,4)}, 
+"gnome": {"name": "gnome", "health": Vector2(10,12), "damage": Vector2(2,4)}, 
 "ghost": {"name": "ghost", "health": Vector2(6,8), "damage": Vector2(2,3)}, 
 "golem": {"name": "golem", "health": Vector2(12,14), "damage": Vector2(3,5)}, 
 "dragon": {"name": "dragon", "health": Vector2(18,22), "damage": Vector2(4,6)} }
+
+const enemy_sprites: Dictionary = {"goblin": {"sprite":  preload("res://new_enemy/sprites/Maple Tree.png"), "scale": Vector2(12,12), "position": Vector2(50,60)}, 
+"golem": {"sprite":  preload("res://new_enemy/sprites/door.png"), "scale": Vector2(20,20), "position": Vector2(50,60)}, 
+"gnome": {"sprite":  preload("res://new_enemy/sprites/Fence's copiar.png"), "scale": Vector2(20,20), "position": Vector2(50,200)}, 
+"ghost": {"sprite":  null, "scale": Vector2(10,10), "position": Vector2(50,60)}, 
+"slime": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)}, 
+"dragon":{"sprite":  preload("res://new_enemy/sprites/House.png"), "scale": Vector2(6.5,6.5), "position": Vector2(50,60)} }
 
 
 @onready var name_label = $Control/label
 @onready var health_label = $Control/health_label
 @onready var damage_animation = $swing_animation
-@onready var damage_position = $damage_pos
 @onready var death_animation = $death_animation
 @onready var damage_label = $Control/damage_lable
 @onready var damage_number_animation = $Control/damage_lable/AnimationPlayer
 @onready var clash_sound = $AudioStreamPlayer2D
+@onready var sprite = $sprite
 
 const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
 preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
 
 var stats: Dictionary
+var sprite_stats: Dictionary
 var health: int 
 var max_health: int
 var base_melee_damage: int
@@ -68,9 +76,13 @@ func change_visibility(flag: bool):
 	name_label.visible = flag
 	
 func new_enemy():
-	print("NEW ENEMY")
 	var random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 1)]
+	#random_key = "slime"
 	stats = enemy_type[random_key]
+	sprite_stats = enemy_sprites[random_key]
+	sprite.texture = sprite_stats["sprite"]
+	sprite.scale = sprite_stats["scale"]
+	sprite.position = sprite_stats["position"]
 	max_health = randi_range(stats["health"][0], stats["health"][1])
 	health = max_health
 	health_label.text = "%d / %d" % [health, max_health]
