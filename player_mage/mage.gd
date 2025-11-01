@@ -23,6 +23,11 @@ static var all_spells: Dictionary = {
 	"heal": HealSpell
 }
 
+var available_spells = [
+	"fireball",
+	"heal"
+]
+
 var enemy: Enemy
 var rythm: WorldRythm
 
