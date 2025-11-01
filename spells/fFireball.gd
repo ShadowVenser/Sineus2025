@@ -4,7 +4,7 @@ class_name FireballSpell
 
 
 func _init():
-	delay = 1
+	delay = 0
 	period = 0
 	casts = 1
 	#picture = 

@@ -3,6 +3,7 @@ extends Node2D
 @onready var choose_action_screen = $choose_action
 @onready var player = $choose_action/mage
 @onready var enemy = $choose_action/new_enemy
+@onready var spells_animations = $choose_action/spells_animations
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -35,6 +36,9 @@ func _ready() -> void:
 	player.player_is_dead.connect(self.player_death)
 	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
+	spells_animations.connect("animation_finished", stop_animation)
+	spells_animations.hide()
+	
 	player.enemy = $choose_action/new_enemy
 	player.rythm = rythm
 	
@@ -47,12 +51,13 @@ func _process(delta: float) -> void:
 	elif wait_time <= 0:
 		if applying_spells_flag:
 			var spell_name = rythm.get_next_casted()
+			play_animation(spell_name)
 			applying_spells_flag = rythm.apply_tick_spell()
 			print("applyed spell")
 			if applying_spells_flag:
-				set_wait_time(0.2)
+				set_wait_time(2.0)
 			else:
-				set_wait_time(0.6)
+				set_wait_time(1.0)
 			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false
@@ -90,6 +95,15 @@ func enemy_defeated():
 func new_cycle():
 	turn_number = 0
 	enemy.new_enemy()
+	
+func play_animation(spell_name: String):
+	print("SPELL NAME: ",spell_name)
+	spells_animations.show()
+	spells_animations.play(spell_name)
+	
+func stop_animation():
+	print("HIDE")
+	spells_animations.hide()
 		
 func set_wait_time(time: float):
 	wait_time = time
