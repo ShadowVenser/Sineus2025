@@ -29,6 +29,7 @@ const enemy_sprites: Dictionary = {"goblin": {"sprite":  preload("res://new_enem
 @onready var damage_number_animation = $Control/damage_lable/AnimationPlayer
 @onready var clash_sound = $AudioStreamPlayer2D
 @onready var sprite = $sprite
+@onready var effect_animation = $sprite/effects
 
 const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
 preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
@@ -52,6 +53,12 @@ func attack():
 	base_melee_damage = randi_range(stats["damage"][0], stats["damage"][1])
 	print("DAMAGE: ", base_melee_damage)
 	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
+	if effects.get_stun_mod()==0:
+		effect_animation.play("stun")
+	elif effects.get_weak_mod() > 0:
+		effect_animation.play("weak")
+	#if effects.get_stun_mod()==0:
+		#print("STUNNED")
 	effects.effect_applied()
 	emit_signal("deal_damage", damage)
 	if damage > 0:
@@ -67,6 +74,8 @@ func take_damage(damage: int, effect :String = ""):
 		print(effect)
 		effects.add_effect(effect)
 	health -= damage + effects.get_burn_mod()
+	if effects.get_burn_mod() > 0:
+		effect_animation.play("burn")
 	print("Enemy takes damage ", damage)
 	health_label.text = "%d / %d" % [health, max_health]
 	damage_number_animation.play("moving_number")
