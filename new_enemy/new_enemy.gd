@@ -25,11 +25,18 @@ var effects: Effect = Effect.new()
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
+	damage_animation.connect("animation_finished", stop_animation)
+	damage_animation.hide()
 
 func attack():
 	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
 	effects.effect_applied()
 	emit_signal("deal_damage", damage)
+	damage_animation.show()
+	damage_animation.play("swing")
+	
+func stop_animation():
+	damage_animation.hide()
 	
 func take_damage(damage: int, effect :String = ""):
 	print(damage)
