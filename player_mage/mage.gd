@@ -18,9 +18,9 @@ signal player_is_dead()
 
 static var all_spells: Dictionary = {
 	"fireball": FireballSpell, 
-	"scorched_earth": ScorchedEarthSpell, 
-	"freeze": FreezeSpell, 
 	"heal": HealSpell,
+	"freeze": FreezeSpell, 
+	"scorched_earth": ScorchedEarthSpell, 
 	"nova": NovaSpell,
 	"self_burn": SelfBurnEffect,
 	"self_freeze": SelfFreezeEffect,
