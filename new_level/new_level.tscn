@@ -613,6 +613,7 @@ z_index = 1
 visible = false
 
 [node name="defeated_enemy_label" type="Label" parent="choose_action"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.1
@@ -703,5 +704,57 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_l3pa4")
 theme_override_font_sizes/font_size = 40
 text = "DEMENTIA WINS!"
+
+[node name="next_enemy" type="CanvasLayer" parent="choose_action"]
+
+[node name="main_menu" type="Button" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.8
+anchor_right = 0.3
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="next" type="Button" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.8
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 30
+text = "NEXT BATTLE"
+
+[node name="win_label" type="Label" parent="choose_action/next_enemy"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 12
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 40
+text = "ENEMY IS DEFEATED!
+CONTINUE JOURNEY?"
+horizontal_alignment = 1
 
 [editable path="choose_action"]
