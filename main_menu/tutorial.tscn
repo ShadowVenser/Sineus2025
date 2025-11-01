@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnc5gm3ehs7en"]
+
+[ext_resource type="Script" uid="uid://c1lwhqmxnvru4" path="res://main_menu/tutorial.gd" id="1_3ut3s"]
+[ext_resource type="Texture2D" uid="uid://bvwn1xl1apqmh" path="res://backgrounds/Vamp Castle BG.png" id="1_5mgtg"]
+[ext_resource type="Texture2D" uid="uid://bgqki0ksypcpt" path="res://ui/UPD_TutorialUI.png" id="2_vsls7"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="3_3ut3s"]
+[ext_resource type="FontFile" uid="uid://dpfg3g47i3aii" path="res://fonts/bitcell_memesbruh03.ttf" id="4_bxrtj"]
+[ext_resource type="Texture2D" uid="uid://cqloemlw0kdxv" path="res://ui/UI_TravelBook_FrameSelect01a.png" id="5_h2vug"]
+[ext_resource type="Texture2D" uid="uid://bxbs7nf707qcn" path="res://ui/UI_TravelBook_FrameSelect01b.png" id="6_v02xc"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_3ut3s")
+
+[node name="BaseSurface" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BaseSurface"]
+modulate = Color(0.6666667, 0.6666667, 0.6666667, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5mgtg")
+
+[node name="TextureRect2" type="TextureRect" parent="BaseSurface"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.5
+offset_top = -308.5
+offset_right = 546.5
+offset_bottom = 308.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vsls7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseSurface/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -499.5
+offset_top = -240.0
+offset_right = 500.5
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="p1" type="Label" parent="BaseSurface/TextureRect2/HBoxContainer"]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("4_bxrtj")
+theme_override_font_sizes/font_size = 40
+text = "Вы — великий маг! Ну... были им когда-то. Сейчас вы на пенсии и у вас новый заклятый враг, а именно — ваша Деменция.
+
+Бороться с ней вам всегда помогала ваша книга заклинаний, в которую вы на протяжение всей жизни записывали свои открытия."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="p2" type="Label" parent="BaseSurface/TextureRect2/HBoxContainer"]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74509805, 0.31764707, 0.12941177, 1)
+theme_override_fonts/font = ExtResource("4_bxrtj")
+theme_override_font_sizes/font_size = 40
+text = "И вот в один день вы забыли закрыть окно... Из-за нелепой случайности все ваши заклинания теперь разбросаны по королевству и вам нужно отыскать их как можно раньше. Отправляйтесь в странствие и обретите свои знания вновь!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="BaseSurface/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.0
+offset_right = 181.0
+offset_bottom = 82.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("3_3ut3s")
+theme_override_font_sizes/font_size = 35
+text = "Пролог"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="st_button" type="TextureButton" parent="BaseSurface"]
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+offset_left = 741.0
+offset_top = 490.0
+offset_right = 1060.0
+offset_bottom = 582.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_h2vug")
+texture_hover = ExtResource("6_v02xc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="BaseSurface/st_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -21.5
+offset_right = 112.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("3_3ut3s")
+theme_override_font_sizes/font_size = 28
+text = "В путь!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -29,7 +29,7 @@ func _ready() -> void:
 	button_exit.connect("pressed", self.exit_game)
 
 func start_game() -> void:
-	var new_scene = load("res://new_level/new_level.tscn")
+	var new_scene = load("res://main_menu/tutorial.tscn")
 	get_tree().change_scene_to_packed(new_scene)
 
 func exit_game() -> void:
