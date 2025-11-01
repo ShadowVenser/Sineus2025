@@ -54,8 +54,9 @@ func attack():
 	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
 	effects.effect_applied()
 	emit_signal("deal_damage", damage)
-	damage_animation.show()
-	damage_animation.play("swing")
+	if damage > 0:
+		damage_animation.show()
+		damage_animation.play("swing")
 	
 func stop_animation():
 	damage_animation.hide()
