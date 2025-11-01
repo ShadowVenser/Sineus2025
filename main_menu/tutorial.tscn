@@ -22,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_5mgtg")
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="BaseSurface"]
 anchors_preset = 8
@@ -36,6 +37,7 @@ offset_bottom = 308.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_vsls7")
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BaseSurface/TextureRect2"]
 layout_mode = 1
@@ -58,9 +60,8 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
 theme_override_fonts/font = ExtResource("4_bxrtj")
 theme_override_font_sizes/font_size = 40
-text = "Вы — великий маг! Ну... были им когда-то. Сейчас вы на пенсии и у вас новый заклятый враг, а именно — ваша Деменция.
-
-Бороться с ней вам всегда помогала ваша книга заклинаний, в которую вы на протяжение всей жизни записывали свои открытия."
+text = "Вы — великий маг! Ну... были им когда-то. Сейчас вы на пенсии и у вас новый заклятый враг, а именно — ваша Деменция. Вы даже забыли какой в королевстве государственный язык!
+Но упасть в пучину безумия вам не давала ваша книга заклинаний, в которую вы на протяжение всей жизни записывали свои открытия."
 horizontal_alignment = 1
 autowrap_mode = 3
 
