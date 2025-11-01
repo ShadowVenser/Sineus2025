@@ -49,7 +49,7 @@ func _ready() -> void:
 	enemy_death_animation.hide()
 	defeated_enemy_label.hide()
 	
-	player.enemy = $choose_action/new_enemy
+	player.enemy = enemy
 	choose_action_screen.player = player
 	player.rythm = rythm
 	
@@ -128,6 +128,7 @@ func new_cycle():
 	turn_number = 0
 	enemy.new_enemy()
 	enemy.show()
+	applying_spells_flag2 = false
 	
 func play_animation(spell_name: String):
 	print("SPELL NAME: ", spell_name)
