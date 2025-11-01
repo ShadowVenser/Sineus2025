@@ -1,5 +1,5 @@
 extends DementiaSpell
-class_name TimeskipDementia
+class_name TimeSkipDementia
 
 func _init():
 	delay = 1

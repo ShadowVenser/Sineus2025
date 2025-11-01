@@ -81,6 +81,7 @@ func _process(delta: float) -> void:
 			turn_number += 1
 			print("Turn ", turn_number)
 			SBookSpell.names = player.get_current_spells()
+			player.set_dementia_spell()
 			print(SBookSpell.names)
 			choosing_action = true
 			choose_action_screen.change_visibity(true)

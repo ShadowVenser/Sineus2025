@@ -14,8 +14,6 @@ func _ready() -> void:
 	$Control/spell4.connect("clicked", spell_clicked)
 	$Control/spell5.connect("clicked", spell_clicked)
 	$Control/exit.connect("clicked", spell_clicked)
-	
-	
 		
 	pass
 		

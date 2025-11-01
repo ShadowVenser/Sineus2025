@@ -21,8 +21,13 @@ static var all_spells: Dictionary = {
 	"scorched_earth": ScorchedEarthSpell, 
 	"freeze": FreezeSpell, 
 	"heal": HealSpell,
-	"nova": NovaSpell
+	"nova": NovaSpell,
+	"time_skip": TimeSkipDementia
 }
+
+static var all_dementia_spells: Array[String] = [
+	"time_skip", 
+]
 
 var available_spells: Array[String] = [
 	"fireball",
@@ -44,6 +49,10 @@ var base_block: int = 2
 var block_flag: bool = false
 var turn_counter: int = 0
 var damage_type: String = ""
+
+var current_dementia: Array[String] = [
+	"", "", ""
+]
 
 func heal(heal: int) -> void:
 	health = min(health + heal, max_health)
@@ -89,6 +98,18 @@ func get_current_spells() -> Array[String]:
 	while current_spells.size() > 4:
 		current_spells.erase(current_spells[randi_range(0, current_spells.size() - 1)])
 	return current_spells
+
+func set_dementia_spell()->void:
+	if (randf()<1):
+		current_dementia[0] = all_dementia_spells[randi_range(0, all_dementia_spells.size() - 1)]
+		var spell: DementiaSpell = all_spells[current_dementia[0]].new()
+		current_dementia[1] = spell.get_spell_name()
+		current_dementia[2] = spell.get_spell_description()
+	else:
+		current_dementia = ["", "", ""]
+
+func get_dementia_spell()->Array[String]:
+	return current_dementia
 
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats

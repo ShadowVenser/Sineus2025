@@ -394,6 +394,12 @@ script = ExtResource("1_cr4ar")
 
 [node name="choose_action" parent="." instance=ExtResource("1_yg5ou")]
 
+[node name="Control" parent="choose_action" index="1"]
+z_index = 1
+
+[node name="SpellBook" parent="choose_action" index="2"]
+visible = false
+
 [node name="defeated_enemy_label" type="Label" parent="choose_action"]
 anchors_preset = -1
 anchor_left = 0.5
@@ -408,12 +414,6 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_l3pa4")
 theme_override_font_sizes/font_size = 40
 text = "ENEMY IS DEFEATED!"
-
-[node name="Control" parent="choose_action" index="2"]
-z_index = 1
-
-[node name="SpellBook" parent="choose_action" index="3"]
-visible = false
 
 [node name="mage" parent="choose_action" instance=ExtResource("2_4gmwc")]
 position = Vector2(184, 307)

@@ -54,9 +54,11 @@ func spell_book_pressed():
 	else:
 		$SpellBook/Control/spell4.hide()
 
-	if len(spells) > 4:	
-		$SpellBook/Control/spell5/sp_name.text = spells[4].spell_name
-		$SpellBook/Control/spell5/sp_desc.text = spells[4].description
+	var d_spell_info = player.get_dementia_spell()
+	if d_spell_info[0] != "":
+		SBookSpell.names.append(d_spell_info[0])
+		$SpellBook/Control/spell5/sp_name.text = d_spell_info[1]
+		$SpellBook/Control/spell5/sp_desc.text = d_spell_info[2]
 	else:
 		$SpellBook/Control/spell5.hide()
 	book.show()
