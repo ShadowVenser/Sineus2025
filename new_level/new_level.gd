@@ -1,9 +1,10 @@
 extends Node2D
 
 @onready var choose_action_screen = $choose_action
-@onready var player = $mage
-@onready var enemy = $new_enemy
+@onready var player = $choose_action/mage
+@onready var enemy = $choose_action/new_enemy
 	
+var rythm = WorldRythm.new()
 var turn_number: int = 0
 var defeated_enemies: int = 0
 var wait_time: float = 0
@@ -16,6 +17,7 @@ var battle_begins_flag: bool = false
 var defeated_enemy_flag: bool = false
 var defeated_hero_flag: bool = false
 var defeated_hero_flag2: bool = false
+var applying_spells_flag: bool = false
 var loot: String
 
 var choosing_action: bool = false
@@ -33,6 +35,9 @@ func _ready() -> void:
 	player.player_is_dead.connect(self.player_death)
 	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
+	player.enemy = $choose_action/new_enemy
+	player.rythm = rythm
+	
 func _process(delta: float) -> void:
 	if choosing_action:
 		return
@@ -40,20 +45,33 @@ func _process(delta: float) -> void:
 		wait_time -= delta
 		return
 	elif wait_time <= 0:
+		if applying_spells_flag:
+			var spell_name = rythm.get_next_casted()
+			applying_spells_flag = rythm.apply_tick_spell()
+			print("applyed spell")
+			if applying_spells_flag:
+				set_wait_time(0.2)
+			else:
+				set_wait_time(0.6)
+			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false
 			new_cycle()
 			return
-		turn_number += 1
-		print("Turn ", turn_number)
 		if player_turn:
+			turn_number += 1
+			print("Turn ", turn_number)
 			choosing_action = true
 			choose_action_screen.change_visibity(true)
 		else:
 			print("Enemy attacks!")
 			enemy.attack()
-			player_turn = true		
-		set_wait_time(1.0)
+			player_turn = true
+			if rythm.next_tick():
+				applying_spells_flag = true
+				print("hohohehe")
+				return
+		set_wait_time(0.6)
 		
 func action_pressed():
 	player_turn = false
