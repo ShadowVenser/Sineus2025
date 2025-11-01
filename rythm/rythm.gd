@@ -23,13 +23,17 @@ func next_tick()-> bool:
 		print("current tick now "+str(current_tick))
 	return spellsPresent
 	
+	
 #true - spells to cast; false - no spells	
 func apply_tick_spell() -> bool:
-	var spellsPresent = get_tick(current_tick).next_spell()
+	var spellsPresent = get_tick(current_tick).apply_next_spell()
 	if !spellsPresent:
 		current_tick+=1
 		print("current tick now "+str(current_tick))
 	return spellsPresent
+	
+func get_next_casted() -> String:
+	return get_tick(current_tick).next_spell_name()
 	
 	
 func time_jump(diff: int) -> void:

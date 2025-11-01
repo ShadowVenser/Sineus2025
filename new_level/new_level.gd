@@ -46,6 +46,7 @@ func _process(delta: float) -> void:
 		return
 	elif wait_time <= 0:
 		if applying_spells_flag:
+			var spell_name = rythm.get_next_casted()
 			applying_spells_flag = rythm.apply_tick_spell()
 			print("applyed spell")
 			if applying_spells_flag:
@@ -57,20 +58,20 @@ func _process(delta: float) -> void:
 			defeated_enemy_flag = false
 			new_cycle()
 			return
-		turn_number += 1
-		print("Turn ", turn_number)
 		if player_turn:
+			turn_number += 1
+			print("Turn ", turn_number)
 			choosing_action = true
 			choose_action_screen.change_visibity(true)
 		else:
 			print("Enemy attacks!")
 			enemy.attack()
 			player_turn = true
-		if rythm.next_tick():
-			applying_spells_flag = true
-			print("hohohehe")
-		else:
-			set_wait_time(0.6)
+			if rythm.next_tick():
+				applying_spells_flag = true
+				print("hohohehe")
+				return
+		set_wait_time(0.6)
 		
 func action_pressed():
 	player_turn = false

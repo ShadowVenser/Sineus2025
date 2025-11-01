@@ -28,7 +28,7 @@ func prepare_applying_spells() -> bool:
 		return true
 	return false
 
-func next_spell() -> bool:
+func apply_next_spell() -> bool:
 	print("next spell")
 	spells[current_spell].apply()
 	if spells.size()>current_spell+1:
@@ -38,3 +38,5 @@ func next_spell() -> bool:
 		applying = false
 		return false
 	
+func next_spell_name() -> String:
+	return spells[current_spell].spell_name
