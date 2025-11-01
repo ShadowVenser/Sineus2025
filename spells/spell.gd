@@ -11,6 +11,7 @@ var description: String
 var player: Player
 var enemy: Enemy
 
+var animaion_pos: Vector2
 var crit_bad_chance: float
 var crit_good_chance: float
 

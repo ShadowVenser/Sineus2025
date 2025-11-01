@@ -22,6 +22,6 @@ func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
 
 # Метод для применения эффектов
 func apply() -> void:
-	enemy.take_damage(damage, type)
+	enemy.take_damage(damage)
 	player.take_damage(damage/2)
 	
