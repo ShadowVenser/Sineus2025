@@ -184,8 +184,7 @@ _data = {
 script = ExtResource("1_4k456")
 
 [node name="swing_animation" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(62, 21)
+position = Vector2(-700, 21)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hl6u0")
 animation = &"swing"
@@ -196,9 +195,6 @@ position = Vector2(70, 21)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_l5cd4")
 animation = &"death"
-
-[node name="damage_pos" type="Node2D" parent="."]
-position = Vector2(650, 20)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_tjl11")

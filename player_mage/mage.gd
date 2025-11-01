@@ -6,8 +6,8 @@ signal player_is_dead()
 
 @onready var name_label = $Control/label
 @onready var health_label = $Control/health_label
-@onready var damage_animation = $swing_animation
-@onready var damage_position = $damage_pos
+@onready var animations = $animations
+@onready var melee_animation = $melee
 @onready var death_animation = $death_animation
 @onready var damage_label = $Control/damage_lable
 @onready var damage_number_animation = $Control/damage_lable/AnimationPlayer
@@ -59,23 +59,29 @@ func heal(heal: int) -> void:
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
-	#damage_animation.animation_finished.connect(stop_animation)
-	#damage_animation.hide()
-	#death_animation.animation_finished.connect(stop_death_animation)
-	#death_animation.hide()
-	#self.change_visibility(false)
+	animations.play("idle")
+	animations.connect("animation_finished", stop_animation)
+	melee_animation.connect("animation_finished", stop_melee)
+	melee_animation.hide()
 
 func attack():
 	print("Mage is attacking!")
+	melee_animation.show()
+	melee_animation.play("swing")
 	emit_signal("deal_damage", base_melee_damage)
 	
 func block():
 	print("Mage is blocking!")
+	animations.play("block")
 	block_flag = true
 	
 func cast_spell(spell_name:String):
 	var obj = all_spells[spell_name].new()
 	obj.cast(self, enemy, rythm)
+	animations.show()
+	
+	animations.play("cast_spell")
+	
 	
 	
 func take_damage(damage: int):
@@ -110,26 +116,13 @@ func set_dementia_spell()->void:
 
 func get_dementia_spell()->Array[String]:
 	return current_dementia
-
-#func get_stats(_stats: Dictionary):
-	#opponent_stats = _stats
-	
-#func play_damage_animation(hit: bool = false):
-	#clash_sound.stream = sound_cash.pick_random()
-	#clash_sound.play()
-	#damage_animation.rotation_degrees = [0, 30, 45, 60, 75, 90].pick_random()
-	#damage_animation.position = damage_position.position
-	#if !hit:
-		#damage_animation.position += [Vector2(150, 150), Vector2(-150, -150), Vector2(-150, 150), Vector2(150, -150)].pick_random()
-	#damage_animation.show()
-	#damage_animation.play()
-	#
-#func stop_animation():
-	#damage_animation.hide()
-	#
-#func stop_death_animation():
-	#death_animation.hide()
 	
 func change_visibility(flag: bool):
 	health_label.visible = flag
 	name_label.visible = flag
+	
+func stop_animation():
+	animations.play("idle")
+	
+func stop_melee():
+	melee_animation.hide()
