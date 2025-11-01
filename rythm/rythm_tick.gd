@@ -38,5 +38,5 @@ func apply_next_spell() -> bool:
 		applying = false
 		return false
 	
-func next_spell_name() -> String:
-	return spells[current_spell].spell_name
+func next_spell() -> Spell:
+	return spells[current_spell]
