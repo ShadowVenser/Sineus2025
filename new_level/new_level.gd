@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var choose_action_screen = $choose_action
-@onready var player = $mage
-@onready var enemy = $new_enemy
+@onready var player = $choose_action/mage
+@onready var enemy = $choose_action/new_enemy
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -35,7 +35,7 @@ func _ready() -> void:
 	player.player_is_dead.connect(self.player_death)
 	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
-	player.enemy = $new_enemy
+	player.enemy = $choose_action/new_enemy
 	player.rythm = rythm
 	
 func _process(delta: float) -> void:

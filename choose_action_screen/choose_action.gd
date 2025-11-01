@@ -52,7 +52,11 @@ func return_to_actions():
 func change_visibity(flag: bool):
 	if flag:
 		$Control.show()
+		$mage.show()
+		$new_enemy.show()
 		#$SpellBook.show()
 	else:
 		$Control.hide()
+		$mage.show()
+		$new_enemy.show()
 		#$SpellBook.hide()
