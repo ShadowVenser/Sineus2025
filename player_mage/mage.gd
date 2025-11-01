@@ -20,7 +20,8 @@ static var all_spells: Dictionary = {
 	"fireball": FireballSpell, 
 	"scorched_earth": ScorchedEarthSpell, 
 	"freeze": FreezeSpell, 
-	"heal": HealSpell
+	"heal": HealSpell,
+	"nova": NovaSpell
 }
 
 var available_spells = [
@@ -77,7 +78,7 @@ func take_damage(damage: int):
 		emit_signal("player_is_dead")
 
 func get_current_spells() -> Array[String]:
-	return ["fireball", "scorched_earth", "freeze", "", ""]
+	return ["fireball", "nova", "freeze", "", ""]
 
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats
