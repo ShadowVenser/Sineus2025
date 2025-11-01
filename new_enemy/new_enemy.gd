@@ -18,7 +18,7 @@ const enemy_sprites: Dictionary = {"goblin": {"sprite":  preload("res://new_enem
 "ghost": {"sprite":  null, "scale": Vector2(10,10), "position": Vector2(50,60)}, 
 "slime": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)}, 
 "dragon":{"sprite":  preload("res://new_enemy/sprites/House.png"), "scale": Vector2(6.5,6.5), "position": Vector2(50,60)},
-"boss": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)} }
+"boss": {"sprite":  preload("res://new_enemy/sprites/mirror.png"), "scale": Vector2(5,5), "position": Vector2(50,150), "name_position": Vector2(-75,-200) }}
 
 
 @onready var name_label = $Control/label
@@ -85,9 +85,12 @@ func new_enemy():
 		random_key = "boss"
 	else:
 		random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 2)]
-	#random_key = "slime"
+	#random_key = "boss"
 	stats = enemy_type[random_key]
 	sprite_stats = enemy_sprites[random_key]
+	if "name_position" in sprite_stats.keys():
+		$Control.position = sprite_stats["name_position"]
+	#get_parent().get_node("mage").melee_animation.global_position = sprite.global_position
 	sprite.texture = sprite_stats["sprite"]
 	sprite.scale = sprite_stats["scale"]
 	sprite.position = sprite_stats["position"]
