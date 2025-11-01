@@ -4,6 +4,14 @@ class_name Enemy
 signal deal_damage(_damage: int)
 signal enemy_is_dead()
 
+const enemy_type: Dictionary = {"goblin": {"name": "goblin", "health": Vector2(5,7), "damage": Vector2(1,3)}, 
+"slime": {"name": "slime", "health": Vector2(8,10), "damage": Vector2(1,3)}, 
+"skeleton": {"name": "skeleton", "health": Vector2(10,12), "damage": Vector2(2,4)}, 
+"ghost": {"name": "ghost", "health": Vector2(6,8), "damage": Vector2(2,3)}, 
+"golem": {"name": "golem", "health": Vector2(12,14), "damage": Vector2(3,5)}, 
+"dragon": {"name": "dragon", "health": Vector2(18,22), "damage": Vector2(4,6)} }
+
+
 @onready var name_label = $Control/label
 @onready var health_label = $Control/health_label
 @onready var damage_animation = $swing_animation
@@ -16,9 +24,10 @@ signal enemy_is_dead()
 const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
 preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
 
-var health: int = 10
-var max_health: int = 10
-var base_melee_damage: int = 3
+var stats: Dictionary
+var health: int 
+var max_health: int
+var base_melee_damage: int
 var turn_counter: int = 0
 var damage_type: String = ""
 var effects: Effect = Effect.new()
@@ -29,6 +38,8 @@ func _ready() -> void:
 	damage_animation.hide()
 
 func attack():
+	base_melee_damage = randi_range(stats["damage"][0], stats["damage"][1])
+	print("DAMAGE: ", base_melee_damage)
 	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
 	effects.effect_applied()
 	emit_signal("deal_damage", damage)
@@ -58,5 +69,9 @@ func change_visibility(flag: bool):
 	
 func new_enemy():
 	print("NEW ENEMY")
+	var random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 1)]
+	stats = enemy_type[random_key]
+	max_health = randi_range(stats["health"][0], stats["health"][1])
 	health = max_health
 	health_label.text = "%d / %d" % [health, max_health]
+	name_label.text = stats["name"]

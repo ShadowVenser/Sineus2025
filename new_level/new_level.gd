@@ -56,7 +56,7 @@ func _ready() -> void:
 	victory_screen.hide()
 	victory_screen.get_child(0).connect("button_down", go_to_main_menu)
 	victory_screen.get_child(1).connect("button_down", new_cycle)
-	
+	enemy.new_enemy()
 	player.enemy = enemy
 	choose_action_screen.player = player
 	player.rythm = rythm
