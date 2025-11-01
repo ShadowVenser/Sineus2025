@@ -1,4 +1,4 @@
-extends Spell
+extends DementiaSpell
 
 class_name SelfBurnEffect
 
@@ -10,6 +10,18 @@ func _init():
 	#picture = 
 
 	spell_name = "Self burn"
+	dementia_spell_name = [
+		"Self burn", 
+		"Super burn", 
+		"Self steam",
+		 "????"
+	]
+	dementia_description = [
+		"you burn yourself",
+		"you burn everything around",
+		"you release some cool steam",
+		"??????"
+	]
 	damage = 3
 	heal = 0
 	type = -1

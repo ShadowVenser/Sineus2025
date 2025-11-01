@@ -30,6 +30,8 @@ func spell_book_pressed():
 	$Control.hide()
 	$mage.hide()
 	$new_enemy.hide()
+	if (Player.all_dementia_spells.has(SBookSpell.names[-1])):
+		SBookSpell.names.pop_back()
 	var spells: Array[Spell] = []
 	
 	for sn in SBookSpell.names:
@@ -45,20 +47,24 @@ func spell_book_pressed():
 	if len(spells) > 2:	
 		$SpellBook/Control/spell3/sp_name.text = spells[2].spell_name
 		$SpellBook/Control/spell3/sp_desc.text = spells[2].description
+		$SpellBook/Control/spell3.show()
 	else:
 		$SpellBook/Control/spell3.hide()
 
 	if len(spells) > 3:	
 		$SpellBook/Control/spell4/sp_name.text = spells[3].spell_name
 		$SpellBook/Control/spell4/sp_desc.text = spells[3].description
+		$SpellBook/Control/spell4.show()
 	else:
 		$SpellBook/Control/spell4.hide()
 
 	var d_spell_info = player.get_dementia_spell()
+	print(d_spell_info)
 	if d_spell_info[0] != "":
 		SBookSpell.names.append(d_spell_info[0])
 		$SpellBook/Control/spell5/sp_name.text = d_spell_info[1]
 		$SpellBook/Control/spell5/sp_desc.text = d_spell_info[2]
+		$SpellBook/Control/spell5.show()
 	else:
 		$SpellBook/Control/spell5.hide()
 	book.show()
