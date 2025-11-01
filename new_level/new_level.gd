@@ -4,6 +4,7 @@ extends Node2D
 @onready var player = $choose_action/mage
 @onready var enemy = $choose_action/new_enemy
 @onready var spells_animations = $choose_action/spells_animations
+@onready var secondary_animations = $choose_action/secondary_animations
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -38,6 +39,7 @@ func _ready() -> void:
 	
 	spells_animations.connect("animation_finished", stop_animation)
 	spells_animations.hide()
+	secondary_animations.hide()
 	
 	player.enemy = $choose_action/new_enemy
 	choose_action_screen.player = player
@@ -101,14 +103,19 @@ func new_cycle():
 	
 func play_animation(spell_name: String):
 	print("SPELL NAME: ", spell_name)
-	spells_animations.position = spells_animations.spells[spell_name][0]
-	spells_animations.scale = spells_animations.spells[spell_name][1]
+	var animation_stats = spells_animations.spells[spell_name]
+	spells_animations.position = animation_stats[0]
+	spells_animations.scale = animation_stats[1]
+	if animation_stats[2]:
+		secondary_animations.show()
+		secondary_animations.play(spell_name)
 	spells_animations.show()
 	spells_animations.play(spell_name)
 	
 func stop_animation():
 	print("HIDE")
 	spells_animations.hide()
+	secondary_animations.hide()
 		
 func set_wait_time(time: float):
 	wait_time = time

@@ -20,7 +20,8 @@ static var all_spells: Dictionary = {
 	"fireball": FireballSpell, 
 	"scorched_earth": ScorchedEarthSpell, 
 	"freeze": FreezeSpell, 
-	"heal": HealSpell
+	"heal": HealSpell,
+	"nova": NovaSpell
 }
 
 var available_spells: Array[String] = [
