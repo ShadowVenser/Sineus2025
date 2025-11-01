@@ -7,6 +7,7 @@ signal cast_spell(action_name: String, spell_name: String)
 signal cast_spell_on_enemy(spell_name: String)
 
 @onready var book = $SpellBook
+var player: Player
 
 func _ready() -> void:
 	$Control/melee_attack.connect("button_with_name", action_pressed) # Отправляем сигнал атаки уровню
@@ -29,6 +30,35 @@ func spell_book_pressed():
 	$Control.hide()
 	$mage.hide()
 	$new_enemy.hide()
+	var spells: Array[Spell] = []
+	
+	for sn in SBookSpell.names:
+		if (sn != ""):
+			spells.append(Player.all_spells[sn].new())
+	print(spells[0].spell_name)
+	$SpellBook/Control/spell1/sp_name.text = spells[0].spell_name
+	$SpellBook/Control/spell1/sp_desc.text = spells[0].description
+	
+	$SpellBook/Control/spell2/sp_name.text = spells[1].spell_name
+	$SpellBook/Control/spell2/sp_desc.text = spells[1].description
+	
+	if len(spells) > 2:	
+		$SpellBook/Control/spell3/sp_name.text = spells[2].spell_name
+		$SpellBook/Control/spell3/sp_desc.text = spells[2].description
+	else:
+		$SpellBook/Control/spell3.hide()
+
+	if len(spells) > 3:	
+		$SpellBook/Control/spell4/sp_name.text = spells[3].spell_name
+		$SpellBook/Control/spell4/sp_desc.text = spells[3].description
+	else:
+		$SpellBook/Control/spell4.hide()
+
+	if len(spells) > 4:	
+		$SpellBook/Control/spell5/sp_name.text = spells[4].spell_name
+		$SpellBook/Control/spell5/sp_desc.text = spells[4].description
+	else:
+		$SpellBook/Control/spell5.hide()
 	book.show()
 	
 func action_pressed(action_name: String, spell_name: String = ""):

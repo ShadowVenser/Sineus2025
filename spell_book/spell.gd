@@ -2,7 +2,7 @@ extends Control
 class_name SBookSpell
 
 signal clicked(spell_number: String)
-static var names = ["fireball", "scorched_earth", "freeze", "heal", ""]
+static var names = ["fireball", "fireball", "", "", ""]
 var assigned_spell: String
 @export var index: int = 0
 

@@ -40,6 +40,7 @@ func _ready() -> void:
 	spells_animations.hide()
 	
 	player.enemy = $choose_action/new_enemy
+	choose_action_screen.player = player
 	player.rythm = rythm
 	
 func _process(delta: float) -> void:
@@ -66,6 +67,8 @@ func _process(delta: float) -> void:
 		if player_turn:
 			turn_number += 1
 			print("Turn ", turn_number)
+			SBookSpell.names = player.get_current_spells()
+			print(SBookSpell.names)
 			choosing_action = true
 			choose_action_screen.change_visibity(true)
 		else:

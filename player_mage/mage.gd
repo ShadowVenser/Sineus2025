@@ -76,6 +76,9 @@ func take_damage(damage: int):
 		print("Mage is dead")
 		emit_signal("player_is_dead")
 
+func get_current_spells() -> Array[String]:
+	return ["fireball", "scorched_earth", "freeze", "", ""]
+
 #func get_stats(_stats: Dictionary):
 	#opponent_stats = _stats
 	
