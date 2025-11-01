@@ -1,0 +1,216 @@
+[gd_scene load_steps=15 format=3 uid="uid://dvy44ul38wvwa"]
+
+[ext_resource type="Texture2D" uid="uid://bvwn1xl1apqmh" path="res://backgrounds/Vamp Castle BG.png" id="1_a3olc"]
+[ext_resource type="Script" uid="uid://cjstu5mc6e8uj" path="res://main_menu/guide.gd" id="1_nrv2s"]
+[ext_resource type="Texture2D" uid="uid://bq572lwly02ae" path="res://ui/TutorialUI.png" id="2_od2wu"]
+[ext_resource type="FontFile" uid="uid://dpfg3g47i3aii" path="res://fonts/bitcell_memesbruh03.ttf" id="3_7qfjr"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="4_nrv2s"]
+[ext_resource type="Texture2D" uid="uid://0wjaxxcijyqq" path="res://main_menu/guide assets/guide 1.png" id="5_od2wu"]
+[ext_resource type="Texture2D" uid="uid://76iw2vykpknt" path="res://main_menu/guide assets/guide 2.png" id="7_8oml0"]
+[ext_resource type="Texture2D" uid="uid://c2bwgkbsmn2g2" path="res://main_menu/guide assets/guide_3.png" id="8_3v2yg"]
+[ext_resource type="Texture2D" uid="uid://clvrturdv873r" path="res://ui/arr.png" id="8_kpac2"]
+[ext_resource type="Texture2D" uid="uid://b4afgap2gj5yr" path="res://ui/arr_pushed.png" id="9_3v2yg"]
+[ext_resource type="Texture2D" uid="uid://cugey1b0bjbn4" path="res://main_menu/guide assets/guide_4.png" id="9_ibvbd"]
+[ext_resource type="Texture2D" uid="uid://cqloemlw0kdxv" path="res://ui/UI_TravelBook_FrameSelect01a.png" id="10_ww7vg"]
+[ext_resource type="Texture2D" uid="uid://cewn4yk5hw61b" path="res://ui/image_2025-11-01_18-14-29.png" id="11_jhtiv"]
+[ext_resource type="Texture2D" uid="uid://bxbs7nf707qcn" path="res://ui/UI_TravelBook_FrameSelect01b.png" id="12_lkuln"]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrv2s")
+
+[node name="BaseSurface" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BaseSurface"]
+modulate = Color(0.6666667, 0.6666667, 0.6666667, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a3olc")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="BaseSurface"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.5
+offset_top = -308.5
+offset_right = 546.5
+offset_bottom = 308.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_od2wu")
+metadata/_edit_use_anchors_ = true
+
+[node name="title" type="Label" parent="BaseSurface/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.0
+offset_right = 181.0
+offset_bottom = 82.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("4_nrv2s")
+theme_override_font_sizes/font_size = 35
+text = "Как играть"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Guide1" type="Sprite2D" parent="BaseSurface/TextureRect2"]
+visible = false
+position = Vector2(542.5, 186.5)
+scale = Vector2(0.62953377, 0.6295337)
+texture = ExtResource("5_od2wu")
+
+[node name="p1" type="Label" parent="BaseSurface/TextureRect2"]
+visible = false
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 59.5
+offset_top = 308.5
+offset_right = 1025.0
+offset_bottom = 758.5
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("3_7qfjr")
+theme_override_font_sizes/font_size = 40
+text = "Итак, вы отправились в путь! На нем вас ждут разные угрозы, реальные и не очень, но вы в любом случае готовы дать отпор! За свою жизнь вы отточили до автоматизма боевые искусства и можете как напасть в рукопашную, так и заблокировать атаку, снизив урон. Однако основная ваша сила сосредоточена в книге заклинаний... была, тем не менее у вас есть два заклинания и обрывки воспоминаний!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Guide2" type="Sprite2D" parent="BaseSurface/TextureRect2"]
+visible = false
+position = Vector2(548.5, 178.5)
+scale = Vector2(3.0449219, 3.044922)
+texture = ExtResource("7_8oml0")
+
+[node name="p2" type="Label" parent="BaseSurface/TextureRect2"]
+visible = false
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 58.5
+offset_top = 285.5
+offset_right = 1024.0
+offset_bottom = 735.5
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("3_7qfjr")
+theme_override_font_sizes/font_size = 40
+text = "Маги относят заклинания к двум типам: огоненному и водному. Поговаривают о том, что существет высшая магия \"что над временем и пространством\", но сегодня эти слухи серьёзно не воспринимают. Раньше вы подкрашивали страницы по цвету стихии заклинания в огненно-красный или водно-изумрудный, а недавно начали видеть призрачные страницы. Доктор не советовал вам их читать, но вы знаете, что простым людам просто не дано  понять ваши воспоминания!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Guide3" type="Sprite2D" parent="BaseSurface/TextureRect2"]
+visible = false
+position = Vector2(543.5, 177.5)
+texture = ExtResource("8_3v2yg")
+
+[node name="p3" type="Label" parent="BaseSurface/TextureRect2"]
+visible = false
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 60.5
+offset_top = 291.5
+offset_right = 1041.0
+offset_bottom = 741.5
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("3_7qfjr")
+theme_override_font_sizes/font_size = 40
+text = "Хотя люди считают магов хаотичными, это не так (точнее не совсем так).  Любое заклинание описывается ритмическим рисунком и срабатывает несколько раз в определённое время. Неопытные маги часто забывают это, из-за чего их заклинания с противоположными стихиями отменяют друг друга. В лучшие времена вы предугадывали поведение магии на сотни ходов вперед, но сейчас вашей памяти едва хватает на три."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Guide4" type="Sprite2D" parent="BaseSurface/TextureRect2"]
+visible = false
+position = Vector2(533.5, 193.5)
+scale = Vector2(0.63318783, 0.49620393)
+texture = ExtResource("9_ibvbd")
+
+[node name="p4" type="Label" parent="BaseSurface/TextureRect2"]
+visible = false
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 58.5
+offset_top = 308.5
+offset_right = 1039.0
+offset_bottom = 758.5
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("3_7qfjr")
+theme_override_font_sizes/font_size = 40
+text = "Последнее, но не по важности, о чем вам не стоит забывать: если вас убьют... вы не умрете, а вновь очнётесь в своём замке, правда без найденных заклинаний. Почему? Вы не помните, а остальные не знают. Теперь в точно готовы к своему приключению, удачи вам!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="st_button" type="TextureButton" parent="BaseSurface"]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+offset_left = 442.0
+offset_top = 525.0
+offset_right = 761.0
+offset_bottom = 617.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_ww7vg")
+texture_pressed = ExtResource("11_jhtiv")
+texture_hover = ExtResource("12_lkuln")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="BaseSurface/st_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -21.5
+offset_right = 112.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("4_nrv2s")
+theme_override_font_sizes/font_size = 28
+text = "Теперь точно в путь!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right_btn" type="TextureButton" parent="BaseSurface"]
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+offset_left = 1057.0
+offset_top = 557.0
+offset_right = 1100.0
+offset_bottom = 616.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_kpac2")
+texture_pressed = ExtResource("9_3v2yg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="left_btn" type="TextureButton" parent="BaseSurface"]
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+offset_left = 97.0
+offset_top = 553.0
+offset_right = 140.0
+offset_bottom = 612.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_kpac2")
+texture_pressed = ExtResource("9_3v2yg")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
