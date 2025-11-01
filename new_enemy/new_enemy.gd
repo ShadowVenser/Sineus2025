@@ -18,7 +18,7 @@ const enemy_sprites: Dictionary = {"goblin": {"sprite":  preload("res://new_enem
 "ghost": {"sprite":  null, "scale": Vector2(10,10), "position": Vector2(50,60)}, 
 "slime": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)}, 
 "dragon":{"sprite":  preload("res://new_enemy/sprites/House.png"), "scale": Vector2(6.5,6.5), "position": Vector2(50,60)},
-"boss": {"sprite":  preload("res://new_enemy/sprites/Bushe1.png"), "scale": Vector2(7,7), "position": Vector2(50,150)} }
+"boss": {"sprite":  preload("res://new_enemy/sprites/mirror.png"), "scale": Vector2(5,5), "position": Vector2(50,150), "name_position": Vector2(-75,-200) }}
 
 
 @onready var name_label = $Control/label
@@ -54,8 +54,9 @@ func attack():
 	var damage = (base_melee_damage - effects.get_weak_mod()) * effects.get_stun_mod()
 	effects.effect_applied()
 	emit_signal("deal_damage", damage)
-	damage_animation.show()
-	damage_animation.play("swing")
+	if damage > 0:
+		damage_animation.show()
+		damage_animation.play("swing")
 	
 func stop_animation():
 	damage_animation.hide()
@@ -69,7 +70,7 @@ func take_damage(damage: int, effect :String = ""):
 	print("Enemy takes damage ", damage)
 	health_label.text = "%d / %d" % [health, max_health]
 	damage_number_animation.play("moving_number")
-	damage_label.text = "-" + str(damage)
+	damage_label.text = "-" + str(damage + effects.get_burn_mod())
 	if health <= 0:
 		print("Enemy is dead")
 		emit_signal("enemy_is_dead")
@@ -85,9 +86,12 @@ func new_enemy():
 		random_key = "boss"
 	else:
 		random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 2)]
-	#random_key = "slime"
+	#random_key = "boss"
 	stats = enemy_type[random_key]
 	sprite_stats = enemy_sprites[random_key]
+	if "name_position" in sprite_stats.keys():
+		$Control.position = sprite_stats["name_position"]
+	#get_parent().get_node("mage").melee_animation.global_position = sprite.global_position
 	sprite.texture = sprite_stats["sprite"]
 	sprite.scale = sprite_stats["scale"]
 	sprite.position = sprite_stats["position"]

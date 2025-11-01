@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://c54jeknqdvg6n" path="res://new_level/spells_animations.gd" id="7_f1umi"]
 [ext_resource type="Texture2D" uid="uid://lv50kfu3fad7" path="res://new_level/Green Effect and Bullet 16x16.png" id="8_gnfbt"]
 [ext_resource type="Texture2D" uid="uid://ceyr70ge56evh" path="res://new_level/Purple Effect and Bullet 16x16.png" id="9_87mdq"]
-[ext_resource type="Script" uid="uid://ttuq511haau4" path="res://rythm/worldRyhtmBox.gd" id="9_gnfbt"]
+[ext_resource type="Script" path="res://rythm/worldRyhtmBox.gd" id="9_gnfbt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knctr"]
 atlas = ExtResource("5_sfcjj")
