@@ -16,17 +16,26 @@ signal player_is_dead()
 #const sound_cash = [preload("res://sfx/sword-clash-241729.mp3"), preload("res://sfx/sword-clashhit-393837.mp3"), 
 #preload("res://sfx/sword-slice-2-393845.mp3"), preload("res://sfx/sword-slice-393847.mp3")]
 
-static var all_spells: Dictionary = {"fireball": FireballSpell, "scorched_earth": ScorchedEarthSpell, "freeze": FreezeSpell, "heal": HealSpell}
+static var all_spells: Dictionary = {
+	"fireball": FireballSpell, 
+	"scorched_earth": ScorchedEarthSpell, 
+	"freeze": FreezeSpell, 
+	"heal": HealSpell
+}
+
 var enemy: Enemy
 var rythm: WorldRythm
 
 var health: int = 10
-var max_health: int = 10
+var max_health: int = 35
 var base_melee_damage: int = 5
 var base_block: int = 2
 var block_flag: bool = false
 var turn_counter: int = 0
 var damage_type: String = ""
+
+func heal(heal: int) -> void:
+	health = min(health + heal, max_health)
 
 func _ready() -> void:
 	health_label.text = "%d / %d" % [health, max_health]
