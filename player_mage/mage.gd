@@ -121,25 +121,6 @@ func add_spell():
 	if (available_spells.size() < 5):
 		available_spells.append(all_spells.keys()[available_spells.size()])
 
-#func get_stats(_stats: Dictionary):
-	#opponent_stats = _stats
-	
-#func play_damage_animation(hit: bool = false):
-	#clash_sound.stream = sound_cash.pick_random()
-	#clash_sound.play()
-	#damage_animation.rotation_degrees = [0, 30, 45, 60, 75, 90].pick_random()
-	#damage_animation.position = damage_position.position
-	#if !hit:
-		#damage_animation.position += [Vector2(150, 150), Vector2(-150, -150), Vector2(-150, 150), Vector2(150, -150)].pick_random()
-	#damage_animation.show()
-	#damage_animation.play()
-	#
-#func stop_animation():
-	#damage_animation.hide()
-	#
-#func stop_death_animation():
-	#death_animation.hide()
-	
 func change_visibility(flag: bool):
 	health_label.visible = flag
 	name_label.visible = flag
