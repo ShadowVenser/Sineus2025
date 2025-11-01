@@ -2,8 +2,6 @@ extends Control
 
 @onready var button_new_game = $VBoxContainer/ng_button
 @onready var button_exit = $VBoxContainer/exit_button
-@onready var btn = $TextureButton
-
 
 func _ready() -> void:
 	button_new_game.anchor_left = 0
