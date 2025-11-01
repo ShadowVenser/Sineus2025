@@ -80,6 +80,7 @@ func change_visibility(flag: bool):
 	
 func new_enemy():
 	enemy_counter += 1
+	effects.zero()
 	var random_key
 	if enemy_counter == 7:
 		random_key = "boss"

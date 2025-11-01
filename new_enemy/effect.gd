@@ -17,6 +17,11 @@ var effects = {
 
 func add_effect(effect_name: String) -> void:
 	effects[effects_ttl[effect_name]] = effects_ttl[effect_name]
+	print("added "+effect_name)
+
+func zero():
+	for key in effects.keys():
+		effects[key] = 0
 
 #func get_effects() -> int:
 	#var code = 0

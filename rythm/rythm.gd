@@ -44,6 +44,8 @@ func get_next_casted() -> String:
 	
 	
 func time_jump(diff: int) -> void:
+	if -diff>=timeline.size():
+		return
 	current_tick += diff
 	get_tick(current_tick+2)
 	rythmLine.redraw(timeline.slice(current_tick, current_tick+3))

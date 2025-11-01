@@ -1,19 +1,19 @@
 extends Spell
 
-class_name FreezeSpell
+class_name BlizzardSpell
 
 
 func _init():
-	delay = 2
-	period = 2
-	casts = 2
+	delay = 1
+	period = 1
+	casts = 5
 	#picture = 
 
-	spell_name = "Freeze"
-	damage = 2
+	spell_name = "Blizzard"
+	damage = 3
 	heal = 0
 	type = 1
-	description = "Freeze your enemy, so he cant move"
+	description = "Summon powerfull blizzard"
 
 
 func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
@@ -22,5 +22,6 @@ func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
 
 # Метод для применения эффектов
 func apply() -> void:
-	enemy.take_damage(damage, "Stun")
+	enemy.take_damage(damage)
+	player.take_damage(damage/3)
 	

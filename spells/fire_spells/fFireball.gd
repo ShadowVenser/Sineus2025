@@ -13,7 +13,7 @@ func _init():
 	crit_bad_chance = 0.1
 
 	spell_name = "Fireball"
-	damage = 5
+	damage = 4
 	heal = 0
 	type = -1
 	description = "Throw a basic fireball next round"
@@ -25,6 +25,6 @@ func cast(pl: Player, en: Enemy, rythm: WorldRythm) -> void:
 
 # Метод для применения эффектов
 func apply() -> void:
-	enemy.take_damage(damage)
+	enemy.take_damage(damage, "Burn")
 	super.apply()
 	

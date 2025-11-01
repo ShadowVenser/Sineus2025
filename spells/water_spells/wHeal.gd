@@ -4,13 +4,13 @@ class_name HealSpell
 
 func _init():
 	delay = 1
-	period = 0
-	casts = 1
+	period = 2
+	casts = 2
 	#picture = 
 
 	spell_name = "Heal"
 	damage = 0
-	heal = 4
+	heal = 3
 	type = 1
 	description = "Heal yourself next round with water magic"
 

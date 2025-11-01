@@ -21,15 +21,17 @@ static var all_spells: Dictionary = {
 	"heal": HealSpell,
 	"freeze": FreezeSpell, 
 	"scorched_earth": ScorchedEarthSpell, 
+	"blizzard" : BlizzardSpell,
 	"nova": NovaSpell,
 	"self_burn": SelfBurnEffect,
 	"self_freeze": SelfFreezeEffect,
 	"time_skip": TimeSkipDementia, 
 	"time_hold": TimeHoldDementia,
+	"time_loop": TimeLoopDementia,
 }
 
 static var all_dementia_spells: Array[String] = [
-	"self_burn", "self_freeze", "time_skip", "time_hold"
+	"self_burn", "self_freeze", "time_skip", "time_hold", "time_loop"
 ]
 
 var available_spells: Array[String] = [
@@ -122,7 +124,7 @@ func get_dementia_spell()->Array[String]:
 	return current_dementia
 
 func add_spell():
-	if (available_spells.size() < 5):
+	if (available_spells.size() < 6):
 		available_spells.append(all_spells.keys()[available_spells.size()])
 
 func change_visibility(flag: bool):
