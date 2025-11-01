@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://cter64asbm100"]
+[gd_scene load_steps=60 format=3 uid="uid://cter64asbm100"]
 
 [ext_resource type="Script" uid="uid://1y10nas27uvh" path="res://new_level/new_level.gd" id="1_cr4ar"]
 [ext_resource type="PackedScene" uid="uid://8nr30de6hnue" path="res://choose_action_screen/choose_action.tscn" id="1_yg5ou"]
 [ext_resource type="PackedScene" uid="uid://bfg831at0l2vh" path="res://player_mage/mage.tscn" id="2_4gmwc"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="3_l3pa4"]
 [ext_resource type="PackedScene" uid="uid://c1exb7f5de312" path="res://new_enemy/new_enemy.tscn" id="4_xebsd"]
 [ext_resource type="Texture2D" uid="uid://vid8ptle6cp0" path="res://new_level/Fire Effect and Bullet 16x16.png" id="5_sfcjj"]
 [ext_resource type="Texture2D" uid="uid://cvvthk11a3gvu" path="res://new_level/Water Effect and Bullet 16x16.png" id="6_f1umi"]
@@ -359,15 +360,59 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mob0i"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imi2o"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqwy7"]
+atlas = ExtResource("5_sfcjj")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8u8fb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mob0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imi2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqwy7")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}]
+
 [node name="new_level" type="Node2D"]
 script = ExtResource("1_cr4ar")
 
 [node name="choose_action" parent="." instance=ExtResource("1_yg5ou")]
 
-[node name="Control" parent="choose_action" index="1"]
+[node name="defeated_enemy_label" type="Label" parent="choose_action"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_l3pa4")
+theme_override_font_sizes/font_size = 40
+text = "ENEMY IS DEFEATED!"
+
+[node name="Control" parent="choose_action" index="2"]
 z_index = 1
 
-[node name="SpellBook" parent="choose_action" index="2"]
+[node name="SpellBook" parent="choose_action" index="3"]
 visible = false
 
 [node name="mage" parent="choose_action" instance=ExtResource("2_4gmwc")]
@@ -391,5 +436,13 @@ position = Vector2(554, 304)
 scale = Vector2(50, 50)
 sprite_frames = SubResource("SpriteFrames_mob0i")
 animation = &"Fire nova"
+
+[node name="enemy_death" type="AnimatedSprite2D" parent="choose_action"]
+modulate = Color(1.697393, 1.3912412, 1.697393, 1)
+position = Vector2(952.99994, 305.99997)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_8u8fb")
+animation = &"death"
+frame_progress = 0.51349163
 
 [editable path="choose_action"]

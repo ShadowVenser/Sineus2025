@@ -3,8 +3,11 @@ extends Node2D
 @onready var choose_action_screen = $choose_action
 @onready var player = $choose_action/mage
 @onready var enemy = $choose_action/new_enemy
+@onready var defeated_enemy_label = $choose_action/defeated_enemy_label
+
 @onready var spells_animations = $choose_action/spells_animations
 @onready var secondary_animations = $choose_action/secondary_animations
+@onready var enemy_death_animation = $choose_action/enemy_death
 	
 var rythm = WorldRythm.new()
 var turn_number: int = 0
@@ -17,6 +20,7 @@ var victory_flag: bool = false
 var victory_flag2: bool = false
 var battle_begins_flag: bool = false
 var defeated_enemy_flag: bool = false
+var defeated_enemy_flag2: bool = false
 var defeated_hero_flag: bool = false
 var defeated_hero_flag2: bool = false
 var applying_spells_flag: bool = false
@@ -38,8 +42,11 @@ func _ready() -> void:
 	enemy.enemy_is_dead.connect(self.enemy_defeated) 
 	
 	spells_animations.connect("animation_finished", stop_animation)
+	enemy_death_animation.connect("animation_finished", stop_enemy_death_animation)
 	spells_animations.hide()
 	secondary_animations.hide()
+	enemy_death_animation.hide()
+	defeated_enemy_label.hide()
 	
 	player.enemy = $choose_action/new_enemy
 	choose_action_screen.player = player
@@ -64,6 +71,10 @@ func _process(delta: float) -> void:
 			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false
+			enemy_defeated2()
+			return
+		if defeated_enemy_flag2:
+			defeated_enemy_flag2 = false
 			new_cycle()
 			return
 		if player_turn:
@@ -97,9 +108,19 @@ func enemy_defeated():
 	call_deferred("set_wait_time", 2.0)
 	defeated_enemy_flag = true
 	
+func enemy_defeated2():
+	enemy_death_animation.show()
+	enemy_death_animation.play("death")
+	call_deferred("set_wait_time", 5.0)
+	enemy.hide()
+	defeated_enemy_flag2 = true
+	defeated_enemy_label.show()
+	
 func new_cycle():
+	defeated_enemy_label.hide()
 	turn_number = 0
 	enemy.new_enemy()
+	enemy.show()
 	
 func play_animation(spell_name: String):
 	print("SPELL NAME: ", spell_name)
@@ -116,6 +137,9 @@ func stop_animation():
 	print("HIDE")
 	spells_animations.hide()
 	secondary_animations.hide()
+	
+func stop_enemy_death_animation():
+	enemy_death_animation.hide()
 		
 func set_wait_time(time: float):
 	wait_time = time
