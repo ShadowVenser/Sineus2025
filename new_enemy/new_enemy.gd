@@ -69,7 +69,7 @@ func take_damage(damage: int, effect :String = ""):
 	print("Enemy takes damage ", damage)
 	health_label.text = "%d / %d" % [health, max_health]
 	damage_number_animation.play("moving_number")
-	damage_label.text = "-" + str(damage)
+	damage_label.text = "-" + str(damage + effects.get_burn_mod())
 	if health <= 0:
 		print("Enemy is dead")
 		emit_signal("enemy_is_dead")
