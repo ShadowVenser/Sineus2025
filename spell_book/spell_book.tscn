@@ -1,22 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://du775x5t1r201"]
+[gd_scene load_steps=5 format=3 uid="uid://du775x5t1r201"]
 
 [ext_resource type="Script" uid="uid://v35sugd7ql13" path="res://spell_book/spell_book.gd" id="1_aib0h"]
 [ext_resource type="Texture2D" uid="uid://dp476qfgpggvg" path="res://backgrounds/UI_TravelBook_BookCover01a.png" id="2_22sri"]
 [ext_resource type="PackedScene" uid="uid://cinxbilg3i7j1" path="res://spell_book/spell.tscn" id="2_31pxi"]
-[ext_resource type="Texture2D" uid="uid://cniujqs3fa7mv" path="res://backgrounds/preview.png" id="2_fl3mm"]
 [ext_resource type="Texture2D" uid="uid://e2vvgsxxi07l" path="res://backgrounds/UI_TravelBook_BookPageLeft01a.png" id="3_fl3mm"]
 
 [node name="SpellBook" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_aib0h")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_fl3mm")
 
 [node name="book_ui1" type="Sprite2D" parent="."]
 position = Vector2(610.49994, 382.5)

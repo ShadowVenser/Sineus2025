@@ -26,7 +26,9 @@ func block_pressed():
 	emit_signal("block")
 	
 func spell_book_pressed():
-	self.hide()
+	$Control.hide()
+	$mage.hide()
+	$new_enemy.hide()
 	book.show()
 	
 func action_pressed(action_name: String, spell_name: String = ""):
@@ -46,7 +48,9 @@ func spell_clicked(spell_name:String):
 		emit_signal("cast_spell", "spell", spell_name)
 		
 func return_to_actions():
-	self.show()
+	$Control.show()
+	$mage.show()
+	$new_enemy.show()
 	book.hide()
 	
 func change_visibity(flag: bool):
