@@ -91,9 +91,10 @@ func take_damage(damage: int):
 		damage = 0
 	health -= damage
 	health_label.text = "%d / %d" % [health, max_health]
-	damage_label.add_theme_color_override("font_color", Color(1, 0, 0))
-	damage_number_animation.play("moving_number")
-	damage_label.text = "-" + str(damage)
+	if damage > 0:
+		damage_number_animation.play("moving_number")
+		damage_label.add_theme_color_override("font_color", Color(1, 0, 0))
+		damage_label.text = "-" + str(damage)
 	print("Mage takes damage ", damage)
 	if health <= 0:
 		print("Mage is dead")

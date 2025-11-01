@@ -86,7 +86,7 @@ func new_enemy():
 		random_key = "boss"
 	else:
 		random_key = enemy_type.keys()[randi_range(0, enemy_type.size() - 2)]
-	#random_key = "boss"
+	#random_key = "slime"
 	stats = enemy_type[random_key]
 	sprite_stats = enemy_sprites[random_key]
 	if "name_position" in sprite_stats.keys():
