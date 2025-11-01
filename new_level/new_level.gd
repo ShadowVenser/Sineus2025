@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 			if applying_spells_flag:
 				set_wait_time(2.0)
 			else:
-				set_wait_time(1.0)
+				set_wait_time(1.1)
 			return
 		if defeated_enemy_flag:
 			defeated_enemy_flag = false

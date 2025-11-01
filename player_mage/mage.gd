@@ -76,12 +76,9 @@ func block():
 func cast_spell(spell_name:String):
 	var obj = all_spells[spell_name].new()
 	obj.cast(self, enemy, rythm)
-	animations.show()
-	
+	animations.show()	
 	animations.play("cast_spell")
-	
-	
-	
+
 func take_damage(damage: int):
 	if block_flag:
 		block_flag = false
