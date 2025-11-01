@@ -15,12 +15,12 @@ scale = Vector2(4.683036, 3.94375)
 texture = ExtResource("2_22sri")
 
 [node name="book_ui2" type="Sprite2D" parent="."]
-position = Vector2(367.5, 384.99997)
-scale = Vector2(4.9711533, 4.0544214)
+position = Vector2(374.5, 384.49997)
+scale = Vector2(4.9711533, 4.0340133)
 texture = ExtResource("3_fl3mm")
 
 [node name="book_ui3" type="Sprite2D" parent="."]
-position = Vector2(859.9946, 387.39743)
+position = Vector2(866.9946, 385.39743)
 scale = Vector2(4.519334, 4.0218034)
 texture = ExtResource("3_fl3mm")
 flip_h = true
