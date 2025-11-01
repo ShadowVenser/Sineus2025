@@ -40,13 +40,24 @@ func spell_book_pressed():
 	print(spells[0].spell_name)
 	$SpellBook/Control/spell1/sp_name.text = spells[0].spell_name
 	$SpellBook/Control/spell1/sp_desc.text = spells[0].description
+	if spells[0].type == 1:
+		$SpellBook/Control/spell1/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+	else:
+		$SpellBook/Control/spell1/Paper.modulate = Color(1, 0.6, 0.6)
 	
 	$SpellBook/Control/spell2/sp_name.text = spells[1].spell_name
 	$SpellBook/Control/spell2/sp_desc.text = spells[1].description
-	
+	if spells[1].type == 1:
+		$SpellBook/Control/spell2/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+	else:
+		$SpellBook/Control/spell2/Paper.modulate = Color(1, 0.6, 0.6)
 	if len(spells) > 2:	
 		$SpellBook/Control/spell3/sp_name.text = spells[2].spell_name
 		$SpellBook/Control/spell3/sp_desc.text = spells[2].description
+		if spells[2].type == 1:
+			$SpellBook/Control/spell3/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+		else:
+			$SpellBook/Control/spell3/Paper.modulate = Color(1, 0.6, 0.6)
 		$SpellBook/Control/spell3.show()
 	else:
 		$SpellBook/Control/spell3.hide()
@@ -54,6 +65,10 @@ func spell_book_pressed():
 	if len(spells) > 3:	
 		$SpellBook/Control/spell4/sp_name.text = spells[3].spell_name
 		$SpellBook/Control/spell4/sp_desc.text = spells[3].description
+		if spells[3].type == 1:
+			$SpellBook/Control/spell4/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+		else:
+			$SpellBook/Control/spell4/Paper.modulate = Color(1, 0.6, 0.6)
 		$SpellBook/Control/spell4.show()
 	else:
 		$SpellBook/Control/spell4.hide()
