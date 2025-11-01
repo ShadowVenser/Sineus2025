@@ -40,7 +40,7 @@ var available_spells: Array[String] = [
 var enemy: Enemy
 var rythm: WorldRythm
 
-var max_health: int = 1
+var max_health: int = 35
 var health: int = max_health
 var base_melee_damage: int = 5
 var base_block: int = 2

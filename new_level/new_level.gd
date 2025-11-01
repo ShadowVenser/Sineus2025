@@ -114,6 +114,9 @@ func action_pressed():
 	
 func player_death():
 	defeated_hero_flag = true
+	spells_animations.show()
+	play_animation("Death nova")
+	player.hide()
 	call_deferred("set_wait_time", 3.0)
 	
 func player_death2():
@@ -156,7 +159,6 @@ func play_animation(spell_name: String):
 	spells_animations.play(spell_name)
 	
 func stop_animation():
-	print("HIDE")
 	spells_animations.hide()
 	secondary_animations.hide()
 	
