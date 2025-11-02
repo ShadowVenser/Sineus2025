@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://cikidlg7hnrlc"]
+
+[ext_resource type="Script" uid="uid://cwq8k5imxumck" path="res://main_menu/final.gd" id="1_ngk63"]
+[ext_resource type="Texture2D" uid="uid://c3p5wjo4pt2u5" path="res://main_menu/final_assets/bg.png" id="2_udcm1"]
+[ext_resource type="Texture2D" uid="uid://bbovghlp5trcj" path="res://ui/paper.png" id="3_i8um1"]
+[ext_resource type="FontFile" uid="uid://dpfg3g47i3aii" path="res://fonts/bitcell_memesbruh03.ttf" id="3_udcm1"]
+[ext_resource type="FontFile" uid="uid://bcy22jv5sfuot" path="res://fonts/ofont.ru_Serati.ttf" id="4_i8um1"]
+[ext_resource type="Texture2D" uid="uid://cqloemlw0kdxv" path="res://ui/UI_TravelBook_FrameSelect01a.png" id="5_hjkt5"]
+[ext_resource type="Texture2D" uid="uid://cewn4yk5hw61b" path="res://ui/image_2025-11-01_18-14-29.png" id="6_ijq42"]
+[ext_resource type="Texture2D" uid="uid://bxbs7nf707qcn" path="res://ui/UI_TravelBook_FrameSelect01b.png" id="7_p622c"]
+[ext_resource type="Texture2D" uid="uid://ctbobh6kk7nfx" path="res://main_menu/final_assets/fire.png" id="9_hjkt5"]
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ngk63")
+
+[node name="BaseSurface" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="BaseSurface"]
+modulate = Color(0.6666667, 0.6666667, 0.6666667, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_udcm1")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="BaseSurface"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.5
+offset_top = -311.5
+offset_right = 282.5
+offset_bottom = 311.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i8um1")
+metadata/_edit_use_anchors_ = true
+
+[node name="p1" type="Label" parent="BaseSurface/TextureRect2"]
+custom_minimum_size = Vector2(400, 450)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 130.0
+offset_right = 459.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(0.7437835, 0.3188189, 0.13021109, 1)
+theme_override_fonts/font = ExtResource("3_udcm1")
+theme_override_font_sizes/font_size = 40
+text = "Итак, ваш дом уничтожен, но зато страницы найдены! Теперь вы готовы выйти в мир, и однажды эта возможность появится.
+Благодарим за игру и поздравляем с победой!"
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="BaseSurface/TextureRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.5
+offset_top = 38.0
+offset_right = 160.5
+offset_bottom = 120.5
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("4_i8um1")
+theme_override_font_sizes/font_size = 35
+text = "Финал"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="end_button" type="TextureButton" parent="BaseSurface"]
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+offset_left = 467.0
+offset_top = 463.0
+offset_right = 662.0
+offset_bottom = 554.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_hjkt5")
+texture_pressed = ExtResource("6_ijq42")
+texture_hover = ExtResource("7_p622c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="BaseSurface/end_button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -21.5
+offset_right = 112.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.60784316, 0.2509804, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("4_i8um1")
+theme_override_font_sizes/font_size = 28
+text = "В меню"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fire" type="Sprite2D" parent="BaseSurface"]
+modulate = Color(1, 1, 1, 0.73333335)
+z_index = 1
+position = Vector2(580.5, 357.00003)
+scale = Vector2(9.9, 8.925001)
+texture = ExtResource("9_hjkt5")

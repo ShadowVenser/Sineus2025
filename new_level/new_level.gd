@@ -147,6 +147,9 @@ func enemy_defeated2():
 	defeated_enemy_flag2 = true
 	
 func enemy_defeated3():
+	if enemy.enemy_counter == 7:
+		var new_scene = load("res://main_menu/final.tscn")
+		get_tree().change_scene_to_packed(new_scene)
 	defeated_enemy_flag3 = true
 	victory_screen.show()
 	
