@@ -39,6 +39,9 @@ var available_spells: Array[String] = [
 	"heal",
 ]
 
+var current_deck: Array[String] = []
+var current_hand: Array[String] = available_spells.duplicate()
+
 var enemy: Enemy
 var rythm: WorldRythm
 
@@ -82,6 +85,11 @@ func block():
 func cast_spell(spell_name:String):
 	var obj = all_spells[spell_name].new()
 	obj.cast(self, enemy, rythm)
+	current_hand.erase(spell_name)
+	if current_deck.size() > 0:
+		current_hand.push_back(current_deck.pop_back())
+	if current_hand.size() == 0:
+		reshuffle_spells()
 	animations.show()	
 	animations.play("cast_spell")
 
@@ -103,12 +111,17 @@ func take_damage(damage: int):
 		emit_signal("player_is_dead")
 
 func get_current_spells() -> Array[String]:
-	if available_spells.size() <= 4:
-		return available_spells.duplicate()
-	var current_spells = available_spells.duplicate()
-	while current_spells.size() > 4:
-		current_spells.erase(current_spells[randi_range(0, current_spells.size() - 1)])
-	return current_spells
+	return current_hand.duplicate()
+
+func reshuffle_spells() -> void:
+	current_deck = available_spells.duplicate()
+	current_deck.shuffle()
+	if current_deck.size()<=5:
+		current_hand = current_deck
+		current_deck = []
+	else:
+		current_hand = current_deck.slice(0, 5)
+		current_deck = current_deck.slice(5)
 
 func set_dementia_spell()->void:
 	var x = randf()

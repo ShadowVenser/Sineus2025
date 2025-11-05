@@ -37,7 +37,7 @@ func spell_book_pressed():
 	for sn in SBookSpell.names:
 		if (sn != ""):
 			spells.append(Player.all_spells[sn].new())
-	print(spells[0].spell_name)
+	print(spells[0].spell_name+" "+spells[0].description)
 	$SpellBook/Control/spell1/sp_name.text = spells[0].spell_name
 	$SpellBook/Control/spell1/sp_desc.text = spells[0].description
 	if spells[0].type == 1:
@@ -45,12 +45,17 @@ func spell_book_pressed():
 	else:
 		$SpellBook/Control/spell1/Paper.modulate = Color(1, 0.6, 0.6)
 	
-	$SpellBook/Control/spell2/sp_name.text = spells[1].spell_name
-	$SpellBook/Control/spell2/sp_desc.text = spells[1].description
-	if spells[1].type == 1:
-		$SpellBook/Control/spell2/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+	if len(spells) > 1:	
+		$SpellBook/Control/spell2/sp_name.text = spells[1].spell_name
+		$SpellBook/Control/spell2/sp_desc.text = spells[1].description
+		if spells[1].type == 1:
+			$SpellBook/Control/spell2/Paper.modulate = Color(0.265, 0.772, 0.947, 1.0)
+		else:
+			$SpellBook/Control/spell2/Paper.modulate = Color(1, 0.6, 0.6)
+		$SpellBook/Control/spell2.show()
 	else:
-		$SpellBook/Control/spell2/Paper.modulate = Color(1, 0.6, 0.6)
+		$SpellBook/Control/spell2.hide()
+	
 	if len(spells) > 2:	
 		$SpellBook/Control/spell3/sp_name.text = spells[2].spell_name
 		$SpellBook/Control/spell3/sp_desc.text = spells[2].description
